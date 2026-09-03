@@ -1,0 +1,28 @@
+# ── Source documents (not mine to republish) ──────────────────────
+# raw/ holds lecture slides, textbook excerpts and other third-party
+# course material used as ingestion input. The wiki/ notes generated
+# from them are the actual work product and ARE tracked.
+**/raw/
+*.pdf
+*.pptx
+*.docx
+*.ipynb
+
+# ── Obsidian machine-local state ──────────────────────────────────
+**/.obsidian/workspace*
+**/.obsidian/cache
+.trash/
+
+# ── Scratch ───────────────────────────────────────────────────────
+*UsersjayraDownloads*
+exam3_aid.tex
+**/.claude/settings.local.json
+
+# ── OS ────────────────────────────────────────────────────────────
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Local agent/editor tooling
+.claude/
+**/.claude/
