@@ -26,3 +26,12 @@ desktop.ini
 # Local agent/editor tooling
 .claude/
 **/.claude/
+
+# Scratch workspaces at the repo root: study guides, homework drafts, rendered
+# PDFs/PNGs and a bundled TeX toolchain. Never part of the knowledge base.
+/tmp/
+/output/
+
+# Python bytecode
+__pycache__/
+*.pyc
