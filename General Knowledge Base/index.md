@@ -6,6 +6,10 @@ Master catalog of all wiki pages. Updated on every ingest and after every filed 
 ---
 
 ## Overview
+
+- [[Overview]] — high-level synthesis of this knowledge base
+
+## Overview
 - [[overview]] — High-level synthesis of the entire knowledge base
 
 ## Concepts

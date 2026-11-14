@@ -2,9 +2,9 @@
 title: "CSCE 465"
 type: course
 tags: [csce465, security, network-security, cryptography, course]
-sources: [csce465-lecture-01-course-introduction, csce465-lecture-02-security-overview, csce465-hw1-build-and-threat-model-an-ai-agent]
+sources: [csce465-lecture-01-course-introduction, csce465-lecture-02-security-overview, csce465-hw1-build-and-threat-model-an-ai-agent, csce465-lecture-03-introduction-to-cryptography, csce465-lecture-03a-secret-key-cryptography-i, csce465-lecture-03b-secret-key-cryptography-ii-modes-of-operation, csce465-lecture-05-public-key-cryptography, csce465-lecture-04-hash-functions, csce465-lecture-06a-user-authentication, csce465-lecture-07-operating-system-security, csce465-lecture-08-security-theory-policies-and-models, csce465-lecture-09-software-security-buffer-overflow, csce465-recitation-gdb-basics, csce465-lecture-10-network-basics, csce465-lecture-11-malware]
 course: CSCE 465
-updated: 2026-09-03
+updated: 2026-11-04
 ---
 
 CSCE 465/765 (Computer & Network Security) is Texas A&M's security course, taught by [[Guofei Gu]] of the SUCCESS Lab. It is a survey of the whole field rather than a deep dive into one part: the arc runs background and security principles → applied cryptography → OS and software security → network security → AI agent security. The 465 (undergraduate) and 765 (graduate) sections share lectures; 765 additionally requires a mini-research project.
@@ -69,9 +69,10 @@ Required for 765, optional but encouraged for 465. Teams of up to two design, im
 | Unit | Topics |
 |---|---|
 | Background | [[CIA Triad]]; [[Security Policy and Mechanism\|security policies and mechanisms]]; [[Security Assurance\|assurance]]; [[Security Design Principles\|design principles]] |
-| Applied Cryptography | Secret key cryptography; hashes and message digests; public key cryptography; authentication and security handshake pitfalls |
-| OS and System Security | OS security; fundamental security theories; access control; software security |
-| Network Security | Malware; vulnerability analysis; firewalls; intrusion detection; web security |
+| Applied Cryptography | [[Cryptography\|Definitions and cryptanalysis]]; [[Classical Ciphers\|early ciphers]]; [[One-Time Pad]]; [[Secret Key Cryptography]] — [[Feistel Cipher]], [[DES]], [[Triple DES]], [[AES]]; [[Block Cipher Modes of Operation\|modes of operation]]; [[Stream Ciphers]]; [[Message Authentication Code\|MACs]]; [[Hash Functions\|hashes and message digests]] — [[MD5]], [[SHA-1]], [[HMAC]]; [[Public Key Cryptography]] — [[RSA]], [[Diffie-Hellman Key Exchange\|Diffie-Hellman]], [[Digital Signatures]], [[Public Key Infrastructure\|PKI]]; authentication and security handshake pitfalls |
+| Authentication | [[User Authentication]] — [[Password Authentication\|passwords]], [[S/Key Protocol\|S/Key]], [[Biometrics]], [[Authentication Tokens\|tokens]]; security handshake pitfalls |
+| OS and System Security | [[Operating System Security\|OS security]]; fundamental security theories — the [[Safety Problem\|safety problem]], [[Security Models\|security models]], [[Multi-Level Security\|MLS]], [[Bell-LaPadula Model\|BLP]], [[Biba Integrity Model\|Biba]], [[Chinese Wall Model\|Chinese Wall]], [[Role-Based Access Control\|RBAC]]; [[Access Control Models\|access control]] — [[Unix File Permissions\|Unix]] and [[NTFS Permissions\|NTFS]]; software security — [[Buffer Overflow\|buffer overflow]], [[Stack Smashing\|stack smashing]], [[Shellcode\|shellcode]], [[Format String Vulnerabilities\|format strings]], [[Buffer Overflow Defenses\|defenses]] and [[Stack Canaries\|canaries]] |
+| Network Security | [[Internet Protocol\|TCP/IP basics]] — [[TCP]], [[ICMP]], [[HTTP]], [[SMTP]]; [[Malware\|malware]] — [[Computer Viruses\|viruses]], [[Worms\|worms]], [[Notable Worms\|case studies]], [[Botnets\|botnets]], [[Stuxnet]]; vulnerability analysis; firewalls; intrusion detection; web security |
 | AI | AI agent and security — [[AI Agent Security]], [[Prompt Injection]], [[OpenClaw]] |
 
 ## Teaching Style
@@ -87,8 +88,24 @@ The course studies threats and attacks directly, so ethics are stated as a cours
 - [[CSCE 465 Lecture 1 — Course Introduction]] — 39 slides; logistics plus the security definition, goals, and CIA triad
 - [[CSCE 465 Lecture 2 — Security Overview]] — 50 slides; the foundations lecture — definition, attack taxonomy, policy/mechanism/assurance, and the ten design principles
 - [[CSCE 465 HW1 — Build and Threat-Model an AI Agent]] — 31 slides; assignment brief, but two thirds real content on AI agent security and prompt injection
+- [[CSCE 465 Lecture 3 — Introduction to Cryptography]] — 29 slides; opens the applied cryptography unit — definitions, cryptanalysis, early ciphers, the one-time pad, and the primitive taxonomy
+- [[CSCE 465 Lecture 3a — Secret Key Cryptography (I)]] — ~63 slides; the first full algorithms — Feistel structure, DES component by component, Triple DES and meet-in-the-middle, AES, side channels
+- [[CSCE 465 Lecture 3b — Secret Key Cryptography (II): Modes of Operation]] — ~37 slides; ECB/CBC/OFB/CFB/CTR, IVs, MACs, stream ciphers, and the CSS/DeCSS post-mortem
+- [[CSCE 465 Lecture 4 — Hash Functions]] — ~47 slides; properties and the birthday attack, six applications, MD5, SHA-1, HMAC and the extension attack
+- [[CSCE 465 Lecture 5 — Public Key Cryptography]] — ~59 slides; RSA end to end, Diffie-Hellman with its MITM attack, digital signatures, and PKI/CAs including the Comodo breach
+- [[CSCE 465 Lecture 6a — User Authentication]] — ~46 slides; identification vs authentication, the four bases, passwords and salt, S/Key, biometrics, tokens
+- [[CSCE 465 Lecture 7 — Operating System Security]] — ~42 slides; the boot chain as attack surface, cold boot, DAC/MAC and policy, Unix permissions, NTFS
+- [[CSCE 465 Lecture 8 — Security Theory: Security Policies and Models]] — 47 slides; the undecidability of safety, then the four classical models — BLP, Biba, Chinese Wall, RBAC
+- [[CSCE 465 Lecture 9 — Software Security: Buffer Overflow]] — ~47 slides; opens the software security unit — stack smashing end to end, heap/off-by-one/function-pointer/format-string variants, and the five defense families
+- [[CSCE 465 Recitation — gdb Basics]] — 11 slides (one-up, TA-delivered); the debugger the buffer-overflow labs need, including `bt` and `info frame`
+- [[CSCE 465 Lecture 10 — Network Basics]] — 26 slides; deliberate background for the network security unit — IP, TCP, ICMP, HTTP and SMTP, with telnet used to speak the last two by hand
+- [[CSCE 465 Lecture 11 — Malware]] — 57 slides, the largest deck of the semester; the malware taxonomy, viruses, worms from Morris to Slammer, botnets and BotHunter, and Stuxnet
 
-Decks are two-up (two logical slides per PDF page). The background unit is now covered; cryptography, OS/software security, network security, and AI agent security are outstanding.
+Decks are two-up (two logical slides per PDF page).
+
+**Applied cryptography is complete** — secret key (ciphers, modes, MACs, stream ciphers), hashes (MD5, SHA-1, HMAC), and public key (RSA, Diffie-Hellman, signatures, PKI). **OS and system security** runs across Lectures 7 and 8 (mechanisms, then theory), **software security** opened with Lecture 9 (memory corruption), and **network security** opened with Lectures 10 and 11 (TCP/IP background, then malware). **Still outstanding: vulnerability analysis, firewalls, intrusion detection and web security**; the AI agent unit arrived early via HW1.
+
+Decks run 1, 2, 3, 3a, 3b, 4, 5, **6a**, 7, 8, 9, 10, 11, plus a one-up gdb recitation. The **6a** label implies a **6b** — per the course outline, likely *authentication and security handshake pitfalls* — and there is no Lecture 6. Both are open gaps.
 
 ## See Also
 
@@ -105,5 +122,73 @@ Decks are two-up (two logical slides per PDF page). The background unit is now c
 - [[Prompt Injection]]
 - [[OpenClaw]]
 - [[CVE-2024-5565]]
+- [[Cryptography]]
+- [[Cryptanalysis]]
+- [[Cipher Security Models]]
+- [[Classical Ciphers]]
+- [[One-Time Pad]]
+- [[Cryptography Taxonomy]]
+- [[Secret Key Cryptography]]
+- [[Block Ciphers]]
+- [[Confusion and Diffusion]]
+- [[Feistel Cipher]]
+- [[DES]]
+- [[Triple DES]]
+- [[AES]]
+- [[Block Cipher Modes of Operation]]
+- [[Initialization Vector]]
+- [[Message Authentication Code]]
+- [[Stream Ciphers]]
+- [[Content Scrambling System]]
+- [[Public Key Cryptography]]
+- [[RSA]]
+- [[Diffie-Hellman Key Exchange]]
+- [[Digital Signatures]]
+- [[Public Key Infrastructure]]
+- [[Hash Functions]]
+- [[Birthday Attack]]
+- [[Hash Function Applications]]
+- [[MD5]]
+- [[SHA-1]]
+- [[HMAC]]
+- [[User Authentication]]
+- [[Password Authentication]]
+- [[S/Key Protocol]]
+- [[Biometrics]]
+- [[Authentication Tokens]]
+- [[Operating System Security]]
+- [[Access Control Models]]
+- [[Access Control Matrix]]
+- [[Safety Problem]]
+- [[Security Models]]
+- [[Multi-Level Security]]
+- [[Bell-LaPadula Model]]
+- [[Biba Integrity Model]]
+- [[Chinese Wall Model]]
+- [[Role-Based Access Control]]
+- [[Unix File Permissions]]
+- [[NTFS Permissions]]
+- [[Buffer Overflow]]
+- [[Stack Smashing]]
+- [[Shellcode]]
+- [[Heap and Pointer Overflows]]
+- [[Format String Vulnerabilities]]
+- [[Unsafe C Functions]]
+- [[Buffer Overflow Defenses]]
+- [[Stack Canaries]]
+- [[GDB]]
+- [[Internet Protocol]]
+- [[TCP]]
+- [[ICMP]]
+- [[HTTP]]
+- [[SMTP]]
+- [[Malware]]
+- [[Computer Viruses]]
+- [[Worms]]
+- [[Notable Worms]]
+- [[Search Worms]]
+- [[Botnets]]
+- [[Stuxnet]]
+- [[Side-Channel Attacks]]
 - [[CSCE 313]]
 - [[Computer Networking]]

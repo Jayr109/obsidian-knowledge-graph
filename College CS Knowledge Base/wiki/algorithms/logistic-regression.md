@@ -57,7 +57,7 @@ No closed form exists — unlike [[Linear Regression]], $\nabla_\mathbf{w}E_{in}
 
 $$\mathbf{w}(t+1) = \mathbf{w}(t) - \eta\,\nabla E_{in}(\mathbf{w}(t))$$
 
-Favorable structure: this $E_{in}$ **has only one valley** — it is convex, so the local minimum gradient descent finds is global.
+Favorable structure: this $E_{in}$ **has only one valley** — it is [[Convexity|convex]], so the local minimum gradient descent finds is global. That guarantee is lost once layers are stacked in [[Multilayer Perceptron|T06]].
 
 The SGD update for a single point $(\mathbf{x}_*, y_*)$:
 

@@ -4,6 +4,7 @@ type: source
 tags: [lecture, csce420, deep-learning, cnn, dqn, lstm, transformers]
 sources: []
 course: CSCE 420
+exam: final
 updated: 2026-09-01
 ---
 
@@ -63,6 +64,8 @@ Nearly all figures in this deck are external images — LeCun's tutorial slides,
 **Reconciled (3)**: [[Deep Learning]], [[Deep Q-Network]], [[Neural Networks]]
 
 ## See Also
+
+- [[Large Language Models]]
 
 - [[CSCE 420]]
 - [[Yoonsuck Choe]]

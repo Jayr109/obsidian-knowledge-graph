@@ -51,6 +51,8 @@ The course also motivates supervision by contrast: a large arithmetic computatio
 
 ## See Also
 
+- [[Machine Learning]] — Deck 6's framing of the same field: generalization and the data deluge
+
 - [[Linear Models]]
 - [[Self-Organizing Map]]
 - [[Decision Tree Learning]]

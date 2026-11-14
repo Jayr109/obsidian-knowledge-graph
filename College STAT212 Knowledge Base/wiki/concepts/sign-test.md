@@ -27,7 +27,7 @@ Rejection regions:
 |-------------|------------------|
 | $H_a: \tilde\mu > c$ | $\dfrac{Y-n/2}{\sqrt n/2} \ge z_\alpha$ |
 | $H_a: \tilde\mu < c$ | $\dfrac{Y-n/2}{\sqrt n/2} \le -z_\alpha$ |
-| $H_a: \tilde\mu \ne c$ | $\dfrac{|Y-n/2|}{\sqrt n/2} \ge z_{\alpha/2}$ |
+| $H_a: \tilde\mu \ne c$ | $\dfrac{\lvert Y-n/2 \rvert}{\sqrt n/2} \ge z_{\alpha/2}$ |
 
 - Example (arthritis pH, $c = 7.39$, $n = 14$, $Y = 3$): statistic $= \dfrac{3-7}{\sqrt{14}/2} = -2.138$, two-sided $P = 0.0325$ ⇒ reject; median pH of sufferers (sample median 7.25) is lower.
 

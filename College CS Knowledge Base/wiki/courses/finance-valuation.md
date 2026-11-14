@@ -2,8 +2,8 @@
 title: "Corporate Finance and Valuation"
 type: course
 tags: [finance, valuation, corporate-finance, time-value-of-money, npv, investing]
-sources: [m03-annuity, m03-perpetuity, m03-mafia-loan, m03-payday-loan, m04-fischer-1, m04-fischer-2, m06-pe-ratios, m07-calculating-volatility, m07-diversification, m08-twitter-1, m08-twitter-2, m10-npv-rule-is-superior, m11-importance-of-accounting, m12-free-cash-flow]
-updated: 2026-08-27
+sources: [m03-annuity, m03-perpetuity, m03-mafia-loan, m03-payday-loan, m04-fischer-1, m04-fischer-2, m06-pe-ratios, m07-calculating-volatility, m07-diversification, m08-twitter-1, m08-twitter-2, m10-npv-rule-is-superior, m11-importance-of-accounting, m12-free-cash-flow, m13-integrating-concepts-part1, m13-integrating-concepts-part2]
+updated: 2026-09-13
 ---
 
 Corporate Finance and Valuation is an undergraduate finance course that teaches students how to value financial assets and make investment decisions using rigorous, cash-flow-based methods. The course emphasizes the time value of money, risk measurement, and the supremacy of the NPV rule for capital budgeting.

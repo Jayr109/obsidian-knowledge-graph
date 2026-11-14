@@ -17,6 +17,8 @@ A neural network is a layered composition of units, each computing a nonlinearit
 | One hidden layer, $k$ units, linear output threshold | Boolean combinations of $k$ half-planes (intersections, unions, slabs) |
 | Two hidden layers | Arbitrary regions, to any accuracy |
 
+[[CSCE 421]] derives this ladder from the bottom up in [[Multilayer Perceptron]], where XOR motivates hidden layers and [[Backpropagation]] trains them.
+
 Minsky and Papert's 1969 result on the limitations of the perceptron — the single-unit row of this table — is in the [[History of AI]] timeline as the trigger for the first neural-network winter.
 
 ## Counting Hidden Units (Final Practice, Problem 6)

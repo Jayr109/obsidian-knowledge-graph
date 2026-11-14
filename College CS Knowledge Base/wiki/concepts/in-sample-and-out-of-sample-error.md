@@ -27,7 +27,7 @@ Learning is therefore only justified if small $E_{in}$ implies small $E_{out}$ �
 
 Two ways this can fail:
 
-- $E_{in}$ is small but $E_{out}$ is large — the hypothesis memorized the sample rather than the pattern.
+- $E_{in}$ is small but $E_{out}$ is large — the hypothesis memorized the sample rather than the pattern. This is [[Overfitting]], and [[CSCE 421 T04 — Overfitting and Regularization|T04]] is devoted to it.
 - $E_{in}$ itself never gets small — the hypothesis set was too limited to express the target.
 
 ## Relation to the Hypothesis Set

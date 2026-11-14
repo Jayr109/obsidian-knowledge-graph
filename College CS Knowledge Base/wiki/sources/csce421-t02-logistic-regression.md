@@ -4,7 +4,7 @@ type: source
 tags: [lecture, csce421, logistic-regression, cross-entropy, gradient-descent, sgd, maximum-likelihood]
 sources: []
 course: CSCE 421
-updated: 2026-08-25
+updated: 2026-09-13
 ---
 
 Topic deck 2 of [[CSCE 421]], by [[Shuiwang Ji]]. 30 slides. Derives [[Logistic Regression]] from maximum likelihood, introduces the [[Cross-Entropy Loss]], and develops [[Gradient Descent]] and SGD as the optimizer — since no closed form exists.
@@ -77,3 +77,4 @@ A slide draws logistic regression as a single neuron: inputs $x_0 \dots x_d$, we
 - [[Maximum Likelihood Estimation]]
 - [[Sigmoid Function]]
 - [[CSCE 421]]
+- [[Linear Models]]

@@ -2,9 +2,9 @@
 title: "Minimax"
 type: algorithm
 tags: [csce420, games, adversarial-search, game-tree]
-sources: [csce420-midterm-practice, csce420-lecture-02-search-and-game-playing]
+sources: [csce420-midterm-practice, csce420-lecture-02-search-and-game-playing, csce420-fall2026-0918-minmax-notebook-walkthrough]
 course: CSCE 420
-updated: 2026-09-01
+updated: 2026-09-18
 ---
 
 Minimax computes the optimal move in a two-player, zero-sum, perfect-information game by backing utilities up the game tree: MAX nodes take the maximum over children, MIN nodes take the minimum, and leaves carry the utility of a terminal position. It assumes the opponent plays optimally, so the value it returns is the best outcome you can guarantee.
@@ -78,6 +78,10 @@ For chess, a linear weighted sum $\text{Eval}(s) = \sum_i w_i f_i(s)$, where $f_
 **Exact values do not matter — only the order** of the successors' minimax values. That ceases to be true once chance nodes appear; see [[Expectimax]].
 
 See [[Game Playing]] for the full framing.
+
+## The Course Implementation (`minmax.ipynb`)
+
+The HW2 starter, walked through in [[CSCE 420 Fall 2026 — 09-18 minmax.ipynb Walkthrough]], is one recursive function `minmax_value(tree, node_type)` with three cases — leaf, MAX, MIN — where the node type is passed as a parameter and flipped on every recursive call, and ±∞ are `99999` / `-99999`. The game tree is a nested Python list, so leaves may sit at different depths. A printed `CALL`/`returns` trace with indentation shows the recursion; on the demo tree `[[7, [3, 8, 1], [15, 9]], [12, [17, 13]]]` the root value is 12.
 
 ## See Also
 

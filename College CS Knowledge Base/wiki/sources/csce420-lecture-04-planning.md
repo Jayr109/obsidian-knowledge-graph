@@ -4,6 +4,7 @@ type: source
 tags: [lecture, csce420, planning, situation-calculus, frame-problem, wumpus-world]
 sources: []
 course: CSCE 420
+exam: final
 updated: 2026-09-01
 ---
 

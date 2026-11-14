@@ -2,9 +2,9 @@
 title: "Security Design Principles"
 type: concept
 tags: [csce465, security, design-principles, saltzer-schroeder]
-sources: [csce465-lecture-02-security-overview, csce465-hw1-build-and-threat-model-an-ai-agent]
+sources: [csce465-lecture-02-security-overview, csce465-hw1-build-and-threat-model-an-ai-agent, csce465-lecture-03-introduction-to-cryptography, csce465-lecture-03a-secret-key-cryptography-i, csce465-lecture-03b-secret-key-cryptography-ii-modes-of-operation, csce465-lecture-07-operating-system-security]
 course: CSCE 465
-updated: 2026-09-03
+updated: 2026-10-08
 ---
 
 Ten principles for designing systems that resist attack, presented in [[CSCE 465]] as the closing third of the security overview. They are the Saltzer & Schroeder principles (from the 1975 paper *The Protection of Information in Computer Systems*), and they are the most durable content in the course: unlike a specific protocol or vulnerability class, these have not changed in fifty years. Each one is a design-time constraint, not a mechanism — they tell you how to arrange mechanisms, not which to use.
@@ -39,7 +39,9 @@ Informally: no back doors. Every access, every time — not just the first one. 
 ### 4. Open Design
 **The design of a system should not be secret.**
 
-Security must not depend on attackers' ignorance. Three arguments: attackers are well motivated, open design permits review and reassures skeptics, and keeping widely-distributed software secret is impossible anyway. The lecture's example is the **Content Scramble System (CSS)** for DVDs, broken in 1999 by a Norwegian group.
+Security must not depend on attackers' ignorance. Three arguments: attackers are well motivated, open design permits review and reassures skeptics, and keeping widely-distributed software secret is impossible anyway. The lecture's example is the **Content Scramble System (CSS)** for DVDs, broken in 1999 by a Norwegian group. Lecture 3b tells the whole story — see [[Content Scrambling System]], where CSS fails at open design, least common mechanism, and work factor simultaneously.
+
+Lecture 3 restates this principle as **"secret keys vs. secret algorithms"** and gives it the name it usually carries in cryptography — **Kerckhoffs's principle**. It also records a real exception: the military does keep algorithms secret, to avoid giving an adversary good ideas, while still reading the public literature. That works only for an actor large enough to run its own review internally. See [[Cryptography]].
 
 The correct pattern is **public algorithms with secret parameters** — the community verifies the design while each organization keeps its own secret instance (its keys). This is the same principle as Kerckhoffs's, and it is why [[Computer Security|security by obscurity]] is treated as a failure mode rather than a strategy.
 
@@ -58,7 +60,7 @@ The lecture raises two honest caveats. Most systems lack the *granularity* of pe
 ### 7. Least Common Mechanism
 **Minimize the amount of mechanism common to more than one user and depended on by all users.**
 
-Read most commonly as *minimize shared channels*. Anything two users share is a potential path between them. Examples of mechanisms that exist to un-share: base/bounds memory protection, virtual memory, virtual machines, VPNs. The motivation is confidentiality and integrity protection against information flow and **side channels** — the shared resource leaks even when it is never explicitly read.
+Read most commonly as *minimize shared channels*. Anything two users share is a potential path between them. Examples of mechanisms that exist to un-share: base/bounds memory protection, virtual memory, virtual machines, VPNs. The motivation is confidentiality and integrity protection against information flow and **side channels** — the shared resource leaks even when it is never explicitly read. [[Side-Channel Attacks]] gives the cryptographic instance: a shared cache or power rail lets an attacker read a key out of the *timing* of an AES implementation.
 
 ### 8. Psychological Acceptability
 **Security settings should match what an ordinary user expects, and interfaces should be intuitive.**
@@ -69,6 +71,8 @@ Two implications, and the second is the sharper one:
 
 ### 9. Work Factor
 **Compare the cost of circumventing a mechanism against the resources of the expected attacker.**
+
+This is exactly [[Cipher Security Models|computational security]], the standard nearly every deployed cipher actually meets: a 128-bit key is secure because 5.6 × 10²⁶ processors is not a thing anyone has, not because anything is proven impossible.
 
 Security is proportionate, not absolute. A university database protecting student grades faces snoopers and grade-changing students; a system protecting military secrets faces government intelligence organizations. The first needs less sophisticated measures than the second. Designing for the wrong adversary wastes budget in one direction and loses everything in the other.
 
@@ -83,6 +87,10 @@ Principles 1–4 concern the *structure* of the mechanism (simple, closed by def
 
 Two of the ten (work factor, compromise recording) are explicitly economic. That is the lecture's larger argument restated: **defense is inherently more expensive than offense**, because the attacker needs only the weakest link. Principles that ration defensive effort are not compromises — they are the only way the economics work.
 
+## Applied: Operating Systems
+
+Lecture 7 instantiates four of the ten at once. The **closed policy** ("default secure") *is* [[Access Control Models|fail-safe defaults]], and the open policy fails for the firewall reason above. **[[Unix File Permissions|setuid]]** is least privilege deliberately suspended — every setuid-root binary is an escalation path — while `sudo` is least privilege restored. A **[[Operating System Security|Trusted Compute Base]]** must be small for exactly the economy-of-mechanism reason: it is the part nothing else can check. And OS **event logging** is compromise recording, carrying this lecture's own caveat that the audit trail must be protected from alteration.
+
 ## Applied: the AI Agent Case
 
 The first homework is a working demonstration that these principles are what actually fix modern systems. [[OpenClaw]]'s default `coding` profile runs tool calls with `ask=off` — no approval step — which is **fail-safe defaults inverted**. Its attack surface shows *per-layer trust checks with no unified policy*, so cross-layer attacks survive local fixes — a **complete mediation** failure at the level of composition rather than of any one check. And the durable fix for [[CVE-2024-5565]] is not to sanitize model output but to have the model emit a constrained spec a trusted renderer interprets: **economy of mechanism** and **least privilege** applied at the model boundary, so a permitted call cannot be repurposed.
@@ -95,7 +103,20 @@ The surface is new. The discipline is fifty years old.
 - [[Security Policy and Mechanism]]
 - [[Security Assurance]]
 - [[Security Attack Taxonomy]]
+- [[Cryptography]]
+- [[Content Scrambling System]]
+- [[Access Control Models]]
+- [[Unix File Permissions]]
+- [[Operating System Security]]
+- [[Cipher Security Models]]
+- [[Side-Channel Attacks]]
 - [[AI Agent Security]]
 - [[Prompt Injection]]
 - [[CVE-2024-5565]]
 - [[CSCE 465]]
+- [[Security Models]]
+- [[Role-Based Access Control]]
+- [[Safety Problem]]
+- [[Buffer Overflow]]
+- [[Buffer Overflow Defenses]]
+- [[Unsafe C Functions]]

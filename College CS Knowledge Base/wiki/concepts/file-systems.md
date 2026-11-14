@@ -115,6 +115,10 @@ fd (per-process DT) → open file table entry (per-open) → v-node (per-file)
 
 The v-node is the in-memory representation of the on-disk inode. See [[File Descriptors]].
 
+## The Security View
+
+[[CSCE 465]] covers the permission layer on top of this structure: [[Unix File Permissions]] for the `rwx` model, the special bits, and POSIX ACLs; [[NTFS Permissions]] for the Windows side; and [[Access Control Models]] for why Linux checks every path component while Windows consults only the file's own ACL — which is what makes *different paths to the same file not equivalent* given the hard links described above.
+
 ## See Also
 
 - [[File Descriptors]]

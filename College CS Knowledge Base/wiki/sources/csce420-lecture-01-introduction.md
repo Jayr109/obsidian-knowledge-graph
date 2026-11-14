@@ -4,10 +4,13 @@ type: source
 tags: [csce420, introduction, philosophy, history, foundations, deep-learning]
 sources: []
 course: CSCE 420
-updated: 2026-08-25
+exam: midterm
+updated: 2026-09-13
 ---
 
 Lecture 1 of [[CSCE 420]] (`raw/CSCE420_slide01_Introduction.pdf`, 60 pages / 42 logical slides, instructor [[Yoonsuck Choe]]) is the course's framing lecture. It has four sections — Introduction, Related Disciplines, History, and Summary — and covers what AI is, which disciplines it draws on, how the field got here, and where it is going. No algorithms appear; this is the conceptual scaffolding the rest of the course hangs on.
+
+> **Exam scope.** Deck 1 contributes **one question** to the midterm per the course scope table.
 
 ## Section 1 — Introduction (slides 1–16)
 
@@ -46,3 +49,5 @@ Figure-heavy synthesis of three eras. The [[Symbolic AI]] slide includes a worke
 - [[History of AI]]
 - [[Foundations of AI]]
 - [[Yoonsuck Choe]]
+- [[Neural Networks]]
+- [[Reinforcement Learning]]

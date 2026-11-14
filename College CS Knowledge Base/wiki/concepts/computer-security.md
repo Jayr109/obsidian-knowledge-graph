@@ -4,7 +4,7 @@ type: concept
 tags: [csce465, security, foundations]
 sources: [csce465-lecture-01-course-introduction, csce465-lecture-02-security-overview]
 course: CSCE 465
-updated: 2026-09-01
+updated: 2026-09-10
 ---
 
 Security, informally, is **the prevention of certain types of intentional actions from occurring**. The definition is deliberately built around *intent*: an accidental disk failure and a deliberate wipe can destroy the same data, but only the second is a security problem. This is the entry point for [[CSCE 465]], and everything else in the course — the [[CIA Triad|three components]], the four goals below, and the [[Security Threat Landscape|catalogue of real attacks]] — is an elaboration of it.
@@ -74,6 +74,7 @@ The course's three organizing questions — *what?*, *how?*, *how well?* — are
 - **Assurance** — how well the mechanisms guarantee the policy, and what it costs: [[Security Assurance]]
 - **Services** — the six functions exposed to users: [[Security Services]]
 - **Design principles** — the ten constraints on how mechanisms are arranged: [[Security Design Principles]]
+- **Cryptography** — the mechanism family underlying most of the others: [[Cryptography]], [[Cryptography Taxonomy]]
 
 The distinction students most often collapse: a violation is always a violation *of a policy*, so with no policy stated, "secure" has no meaning. Mechanisms without assurance are the normal failure mode in practice — the system has a firewall, and no one has checked what it enforces.
 
@@ -89,6 +90,7 @@ Because studying defense requires studying attack, [[CSCE 465]] states ethics as
 - [[Security Services]]
 - [[Security Design Principles]]
 - [[Security Attack Taxonomy]]
+- [[Cryptography]]
 - [[Security Threat Landscape]]
 - [[CSCE 465]]
 - [[Guofei Gu]]

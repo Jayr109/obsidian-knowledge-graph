@@ -2,7 +2,7 @@
 title: "GEOL 101: Principles of Geology"
 type: course
 tags: [geol101, geology, introductory]
-sources: [module-1-science-of-geology, module-2-plate-tectonics, module-3-minerals, module-4-igneous-rocks, module-5-volcanoes, module-6-sedimentary-rocks, module-7-metamorphism-and-deformation, module-8-geologic-time, module-9-earthquakes, module-10-groundwater, module-11-rivers-and-streams, module-12-mass-movement-and-coastal-processes, module-13-glaciers-and-deserts, module-14-climate-change]
+sources: [module-1-science-of-geology, module-2-plate-tectonics, module-3-minerals, module-4-igneous-rocks, module-5-volcanoes, module-6-sedimentary-rocks, module-7-metamorphism-and-deformation, module-8-geologic-time, module-9-earthquakes, module-10-groundwater, module-11-rivers-and-streams, module-12-mass-movement-and-coastal-processes, module-13-glaciers-and-deserts, module-14-climate-change, lab-05-topographic-maps, lab-06-relative-and-numerical-dating]
 course: GEOL 101
 updated: 2026-06-23
 ---
@@ -41,6 +41,11 @@ GEOL 101 — Principles of Geology is an introductory geology course covering Ea
 
 ## Textbook
 - Pearson Education (copyright notices 2020, 2017, 2014 versions referenced in slides).
+
+## Labs
+
+- [[Lab 5: Topographic Maps and Google Earth]]
+- [[Lab 6: Relative and Numerical Dating]]
 
 ## See Also
 - [[Module 1: The Science of Geology]]

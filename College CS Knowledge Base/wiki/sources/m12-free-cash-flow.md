@@ -4,7 +4,7 @@ type: source
 tags: [finance, free-cash-flow, valuation, accounting, ebit, wacc, capital-budgeting]
 sources: [m12-free-cash-flow]
 course: Corporate Finance and Valuation
-updated: 2026-04-10
+updated: 2026-09-13
 ---
 
 This transcript defines [[Free Cash Flow]] as a concept rather than a formula, then walks through each adjustment in the FCF equation from EBIT, explaining the *why* behind each term. The instructor also notes why interest tax shields are excluded from FCF (they are captured in WACC instead, to avoid double-counting).
@@ -50,3 +50,5 @@ The formula covers the most common adjustments. Always reason from the concept: 
 - [[Net Present Value]]
 - [[M11: Importance of Accounting]]
 - [[M10: NPV Rule Is Superior]]
+- [[CAPM]]
+- [[WACC]]

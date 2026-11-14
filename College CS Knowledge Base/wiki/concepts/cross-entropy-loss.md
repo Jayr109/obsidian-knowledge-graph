@@ -42,7 +42,7 @@ $$\mathrm{loss}(X,Y;\mathbf{w}) = -\sum_{i=1}^{N}\sum_{k=1}^{K}\mathbb{I}[y_i=k]
 Two independent reasons, both given in lecture:
 
 1. **It is derived, not chosen.** Maximizing likelihood is *equivalent* to minimizing cross-entropy — the loss falls out of the probabilistic model rather than being imposed. See [[Maximum Likelihood Estimation]].
-2. **It is convex and easy to minimize.** Squared error composed with a sigmoid is non-convex; the lecture's blunt assessment of the squared-error version is "not very convenient (hard to minimize)." Cross-entropy looks uglier — $\ln$, $e^{(\cdot)}$ — but is mathematically friendly.
+2. **It is [[Convexity|convex]] and easy to minimize.** Squared error composed with a sigmoid is non-convex; the lecture's blunt assessment of the squared-error version is "not very convenient (hard to minimize)." Cross-entropy looks uglier — $\ln$, $e^{(\cdot)}$ — but is mathematically friendly.
 
 ## The Gradient Is Why It Is Paired With Softmax
 

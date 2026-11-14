@@ -4,7 +4,7 @@ type: source
 tags: [finance, wacc, capm, beta, cost-of-capital, npv, amcor, worked-example, damodaran]
 sources: [m13-integrating-concepts-part2]
 course: Corporate Finance and Valuation
-updated: 2026-04-21
+updated: 2026-09-13
 ---
 
 Continuation of the Amcor worked example from [[M13: Integrating Concepts, Part 1]]. Computes the [[WACC]] from Yahoo Finance and Barron's data, then discounts the FCF forecast to arrive at NPV. Demonstrates the full capital budgeting pipeline end-to-end.
@@ -92,3 +92,4 @@ This is the correct decision rule: maximize firm value by accepting all positive
 - [[Net Present Value]]
 - [[Free Cash Flow]]
 - [[Diversification]]
+- [[CAPM]]

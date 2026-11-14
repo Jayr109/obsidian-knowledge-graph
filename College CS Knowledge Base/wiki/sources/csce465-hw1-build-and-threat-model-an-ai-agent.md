@@ -4,7 +4,7 @@ type: source
 tags: [csce465, homework, ai-agents, prompt-injection, openclaw, assignment]
 sources: []
 course: CSCE 465
-updated: 2026-09-03
+updated: 2026-09-13
 ---
 
 The Homework 1 briefing deck for [[CSCE 465]] (`raw/CSCE465_hw1-intro.pdf`, 16 PDF pages, two-up = 31 logical slides, dated 9/1/26, instructor [[Guofei Gu]]). **This is an assignment specification, not a lecture** — but roughly two thirds of it is genuine technical content, because the assignment teaches [[Prompt Injection]] before asking the student to demonstrate it. Those concepts are filed on their own pages; this page records the assignment's requirements, structure, and constraints.
@@ -107,3 +107,6 @@ Text extracted with PyMuPDF. **No image-only slides** — all 16 pages carry sub
 - [[OpenClaw]]
 - [[CVE-2024-5565]]
 - [[CSCE 465 Lecture 2 — Security Overview]]
+- [[Security Attack Taxonomy]]
+- [[Security Design Principles]]
+- [[Security Threat Landscape]]

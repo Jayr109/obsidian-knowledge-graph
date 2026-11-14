@@ -4,7 +4,7 @@ type: source
 tags: [csce313, operating-systems, interrupts, exceptions, system-calls, privilege-levels]
 sources: []
 course: CSCE 313
-updated: 2026-04-10
+updated: 2026-09-13
 ---
 
 Lecture 2 covers the hardware mechanisms that allow an OS to enforce isolation between user processes and the kernel. Topics include privilege levels (rings), virtual memory isolation, interrupts and exceptions, and the system call interface. Reference: OSSTEP Chapter 6. Slides adapted from Crooks & Zaharia CS162 (UCB) and Prof. Mortier (Cambridge).
@@ -89,3 +89,4 @@ Diagram slides captured minimally: privilege ring diagram, virtual memory layout
 - [[Virtual Memory]]
 - [[Processes]]
 - [[CSCE 313]]
+- [[Operating Systems]]

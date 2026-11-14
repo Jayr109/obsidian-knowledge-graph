@@ -2,9 +2,9 @@
 title: "Processes"
 type: concept
 tags: [csce313, processes, pcb, process-states, context-switch, virtual-memory]
-sources: [csce313-lecture-01-introduction-to-operating-systems, csce313-lecture-02-architectural-support-for-os, csce313-lecture-08-process-attributes]
+sources: [csce313-lecture-01-introduction-to-operating-systems, csce313-lecture-02-architectural-support-for-os, csce313-lecture-08-process-attributes, csce465-lecture-09-software-security-buffer-overflow]
 course: CSCE 313
-updated: 2026-04-10
+updated: 2026-10-25
 ---
 
 A process is an instance of a running program — the fundamental unit of execution in an operating system. A process is an executing program with restricted rights: it runs in user mode with a private address space, limited access to hardware, and interacts with the OS only through the [[System Calls]] interface.
@@ -33,6 +33,24 @@ A process is an instance of a running program — the fundamental unit of execut
 ```
 
 Each process has its own page table, providing a separate virtual address space even though all processes share the same physical memory.
+
+## Security View
+
+[[CSCE 465]] attacks this layout rather than describing it. Two consequences of the
+address space above are the entire basis of the [[Buffer Overflow|buffer overflow]] unit:
+
+- **The stack grows toward lower addresses, but buffers are written upward.** So a local
+  array that is written past its end runs into the saved frame pointer and then the
+  **saved return address** — both of which sit at higher addresses than the locals. That
+  is [[Stack Smashing|stack smashing]].
+- **Nothing in the layout distinguishes "data the program meant to write" from "data an
+  attacker supplied."** The hardware enforces the text section as read-only, which is why
+  no attack in that unit modifies instructions; they modify the **stored addresses** that
+  decide which instructions run next.
+
+The defenses accordingly change this layout rather than the code: [[Buffer Overflow Defenses|NX]]
+marks the stack non-executable, **ASLR** randomizes where these regions are placed, and
+[[Stack Canaries|StackGuard]] inserts a guard word between the locals and the return address.
 
 ## Process Lifecycle States
 
@@ -107,6 +125,8 @@ A process traditionally contains a single thread of control. [[Threads]] are lig
 ## See Also
 
 - [[Virtual Memory]]
+- [[Buffer Overflow]]
+- [[Stack Smashing]]
 - [[System Calls]]
 - [[Process API]]
 - [[Process Attributes]]

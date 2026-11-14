@@ -2,9 +2,9 @@
 title: "CIA Triad"
 type: concept
 tags: [csce465, security, foundations, confidentiality, integrity, availability]
-sources: [csce465-lecture-01-course-introduction, csce465-lecture-02-security-overview]
+sources: [csce465-lecture-01-course-introduction, csce465-lecture-02-security-overview, csce465-lecture-08-security-theory-policies-and-models]
 course: CSCE 465
-updated: 2026-09-01
+updated: 2026-10-20
 ---
 
 The **CIA triad** — Confidentiality, Integrity, Availability — is the standard decomposition of what "secure" means, and the framing [[CSCE 465]] uses to organize the rest of the course. Any security goal, mechanism, or attack in the course can be located against one or more of the three; naming which component an attack violates is usually the first analytical step.
@@ -50,6 +50,31 @@ The insider question is the one that recurs all course: prevention assumes you c
 
 Enabling **access** to data and resources for parties entitled to them. This is the component that non-security engineering already cares about under other names (uptime, reliability), but the security version assumes the loss is deliberate: a [[Security Threat Landscape|DDoS attack]] or ransomware makes a system unavailable on purpose.
 
+## Formal Statement
+
+Lecture 8 gives each component a set-theoretic definition before building [[Security Models|security models]] on them. In all three, **X** is a set of entities and **I** is information (or, for availability, a resource):
+
+| Component | *I* has the property with respect to *X* if… |
+|---|---|
+| **Confidentiality** | **no** *x* ∈ *X* can obtain information from *I* |
+| **Integrity** | **all** *x* ∈ *X* **trust** information in *I* |
+| **Availability** | **all** *x* ∈ *X* can **access** *I* |
+
+Confidentiality's definition carries a clause worth noticing: ***I* can be disclosed to others.** The property is relative to *X*, not absolute — the final exam answer key is confidential with respect to the students while being freely available to the instructors. Every confidentiality claim is implicitly a claim about *whom* data is hidden from, which is why [[Security Models|a policy must name its subjects]] before it can be evaluated.
+
+The formal integrity definition also sharpens the data/origin split above into three kinds:
+
+- **Data integrity** — trust in *I*, its conveyance and its protection
+- **Origin integrity** — *I* is information about the origin of something, or an identity. This is **authentication**
+- **Assurance** — *I* is a resource, and integrity means the resource **functions as it should**. See [[Security Assurance]]
+
+Availability likewise splits in two:
+
+- **Traditional** — *x* gets access or does not
+- **Quality of service** — *x* was promised a *level* of access (a specific bandwidth, say) and does not get it, **even though some access is achieved**
+
+The QoS case is the one that catches people out: a system can be degraded to uselessness while every availability check reports success.
+
 ## Two Worked Examples
 
 The lecture instantiates all three components twice, which is a useful exam pattern — the same triad, different stakes:
@@ -75,6 +100,10 @@ The three pull against each other, and a mechanism that maximizes one often cost
 ## See Also
 
 - [[Computer Security]]
+- [[Security Models]]
+- [[Multi-Level Security]]
+- [[Cryptography]]
+- [[Cryptography Taxonomy]]
 - [[Security Attack Taxonomy]]
 - [[Security Services]]
 - [[Security Policy and Mechanism]]

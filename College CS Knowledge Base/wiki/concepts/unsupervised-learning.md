@@ -2,9 +2,9 @@
 title: "Unsupervised Learning"
 type: concept
 tags: [csce420, unsupervised, clustering, pca, dimensionality-reduction, redundancy]
-sources: [csce420-lecture-06-machine-learning]
-course: CSCE 420
-updated: 2026-09-01
+sources: [csce420-lecture-06-machine-learning, csce421-t11-pca-autoencoders]
+course: CSCE 420, CSCE 421
+updated: 2026-11-08
 ---
 
 Unsupervised learning receives **no teacher signal** — just a set of unlabeled inputs $\{\vec{x}_i\}$. The network must discover patterns, features, regularities, correlations, or categories in the data and encode them in its output, displaying some degree of **self-organization**.
@@ -40,10 +40,24 @@ Principal Component Analysis (PCA), [[Self-Organizing Map|Self-Organizing Maps]]
 
 Both questions are unanswerable from the data alone — they are choices, and therefore a form of [[Inductive Bias]]. This is the characteristic difficulty of unsupervised learning: with no target, there is no unambiguous notion of a correct answer.
 
+
+## In CSCE 421
+
+[[CSCE 421]] is a supervised-learning course through its first ten decks — every model from [[Linear Regression]] to [[Transformers]] is trained against labels. **[[CSCE 421 T11 — Principal Component Analysis and Autoencoders|T11]] is the first unsupervised topic**, and it states the property plainly: PCA *"is an unsupervised learning technique, and therefore does not need labels."*
+
+Two methods are covered, and the deck proves they are the same method:
+
+- **[[Principal Component Analysis]]** — project onto the subspace of maximal variance, which is also the subspace of minimal reconstruction error
+- **[[Autoencoders]]** — learn an encoder and decoder that reconstruct the input through a bottleneck
+
+PCA turns out to be a linear autoencoder with tied weights and no bias. Both are **dimensionality reduction** by the definition this page gives, and both exploit exactly the redundancy condition above — if the data had no redundant structure, no lower-dimensional projection could reconstruct it.
+
 ## See Also
 
 - [[Self-Organizing Map]]
 - [[Machine Learning Paradigms]]
+- [[Principal Component Analysis]]
+- [[Autoencoders]]
 - [[Curse of Dimensionality]]
 - [[Inductive Bias]]
 - [[CSCE 420]]

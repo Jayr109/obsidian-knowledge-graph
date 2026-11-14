@@ -4,7 +4,7 @@ type: source
 tags: [notes, csce421, softmax, cross-entropy, derivatives, kronecker-delta, homework]
 sources: []
 course: CSCE 421
-updated: 2026-08-25
+updated: 2026-09-13
 ---
 
 Typed companion notes to [[CSCE 421 T03 — Logistic Regression: From Binary to Multi-Class]], authored by [[Shuiwang Ji]] and compiled by Yaochen Xie. 6 pages. The notes restate the slide material in prose and then supply what the slides omit: **the full derivatives of softmax and of the cross-entropy loss**, which the deck flags as necessary for the homework.
@@ -59,3 +59,4 @@ The slides state explicitly that these derivations are needed for the homework, 
 - [[CSCE 421 T03 — Logistic Regression: From Binary to Multi-Class]]
 - [[Gradient Descent]]
 - [[CSCE 421]]
+- [[Sigmoid Function]]

@@ -69,3 +69,8 @@ Linking the two are the **rock cycle** (Modules 1, 6, 7) and the immense span of
 **Courses:** [[GEOL 101: Principles of Geology]]
 
 **People:** [[Dr. Brandi Lenz]]
+
+## See Also
+
+- [[GEOL 101: Principles of Geology]]
+- [[Dr. Brandi Lenz]]

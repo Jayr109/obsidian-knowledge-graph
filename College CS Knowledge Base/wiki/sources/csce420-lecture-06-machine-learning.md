@@ -4,6 +4,7 @@ type: source
 tags: [lecture, csce420, machine-learning, decision-trees, neural-networks, som, genetic-algorithms]
 sources: []
 course: CSCE 420
+exam: final
 updated: 2026-09-01
 ---
 

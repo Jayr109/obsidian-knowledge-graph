@@ -119,6 +119,10 @@ When the OS preempts a process, it:
 
 Cost: CPU state save/restore is fast; TLB flush on address space change is the dominant cost.
 
+## The Security View
+
+The UID/EUID distinction is what [[Unix File Permissions|setuid]] exploits: a setuid binary runs with the *owner's* effective UID regardless of who invoked it, which makes every such program a privilege-escalation path if it has a bug. See also [[Operating System Security]].
+
 ## See Also
 
 - [[Processes]]
@@ -126,3 +130,5 @@ Cost: CPU state save/restore is fast; TLB flush on address space change is the d
 - [[Interrupts and Exceptions]]
 - [[Virtual Memory]]
 - [[CSCE 313]]
+- [[GDB]]
+- [[Stack Smashing]]

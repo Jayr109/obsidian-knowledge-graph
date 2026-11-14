@@ -63,10 +63,12 @@ HALTS is the default source language. Use a different undecidable language (e.g.
 - { ⟨M⟩ : |L(M)| = 1 } — TMs accepting exactly one string
 - { ⟨M⟩ : M(ε) loops forever } — the complement flavor of HALTS
 - **PCP** (Post Correspondence Problem) — undecidable via reduction from HALTS
+- **The safety problem in computer security** — whether a protection system can ever leak a given right. Undecidable by reduction from HALTS; see [[Safety Problem]].
 
 ## See Also
 
 - [[Decidability and Undecidability]]
+- [[Safety Problem]]
 - [[Turing Machines]]
 - [[Turing Reductions]]
 - [[CSCE 411]]

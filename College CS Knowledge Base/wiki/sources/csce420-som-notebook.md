@@ -4,10 +4,13 @@ type: source
 tags: [csce420, som, notebook, python, numpy, unsupervised]
 sources: []
 course: CSCE 420
+exam: excluded
 updated: 2026-08-25
 ---
 
 Jupyter notebook implementing a [[Self-Organizing Map]] on a 2D grid (`raw/CSCE420_som.ipynb`, 7 cells, ~8 KB of code, authored by [[Yoonsuck Choe]], dated 1/7/2022). It is a from-scratch NumPy implementation with matplotlib visualization at ten checkpoints during training — the course's hands-on companion to Final Practice Problem 8.
+
+> **Exam scope.** Self-Organizing Maps are **excluded** from both exams per the instructor.
 
 ## Structure
 

@@ -26,7 +26,7 @@ $$Z = \frac{S_+ - n(n+1)/4}{\sqrt{n(n+1)(2n+1)/24}} \approx N(0,1) \text{ for } 
 |-------------|------------------|
 | $H_a: \tilde\mu > c$ | $Z \ge z_\alpha$ |
 | $H_a: \tilde\mu < c$ | $Z \le -z_\alpha$ |
-| $H_a: \tilde\mu \ne c$ | $|Z| \ge z_{\alpha/2}$ |
+| $H_a: \tilde\mu \ne c$ | $\lvert Z \rvert \ge z_{\alpha/2}$ |
 
 - Example (arthritis pH, $c = 7.39$, $n = 14$): density looks roughly symmetric (so the test applies); $S_+ = 1 + 4 + 13 = 18$, $Z = \dfrac{18 - 14\cdot15/4}{\sqrt{14\cdot15\cdot29/24}} = -2.166$ ⇒ reject; median pH < 7.39 ($P = 0.03$). Agrees with, and is slightly stronger than, the sign test.
 

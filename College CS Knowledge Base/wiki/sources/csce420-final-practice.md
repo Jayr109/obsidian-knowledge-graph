@@ -4,7 +4,8 @@ type: source
 tags: [csce420, exam, practice, logic, probability, machine-learning, deep-learning]
 sources: []
 course: CSCE 420
-updated: 2026-08-25
+exam: final
+updated: 2026-09-13
 ---
 
 Practice final for [[CSCE 420]] (`raw/CSCE420_final-practice.pdf`, 2 pages, 10 problems, 100 points). It covers the second half of the course: first-order logic, planning, probabilistic reasoning, and machine learning through deep learning. **No answer key is included** — worked solutions on the linked pages were derived during ingest and are marked as such.
@@ -54,3 +55,5 @@ The two practice exams together do not touch uninformed search (BFS/DFS/uniform-
 - [[CSCE 420 Midterm Practice]]
 - [[Machine Learning Paradigms]]
 - [[Deep Learning]]
+- [[First-Order Logic]]
+- [[Reinforcement Learning]]

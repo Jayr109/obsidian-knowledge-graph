@@ -2,9 +2,9 @@
 title: "Security Policy and Mechanism"
 type: concept
 tags: [csce465, security, policy, mechanism, foundations]
-sources: [csce465-lecture-02-security-overview]
+sources: [csce465-lecture-02-security-overview, csce465-lecture-08-security-theory-policies-and-models]
 course: CSCE 465
-updated: 2026-09-01
+updated: 2026-10-20
 ---
 
 [[CSCE 465]] frames the whole engineering problem as three questions asked in order:
@@ -22,6 +22,34 @@ Keeping these separate is the single most useful discipline in the course. Most 
 **A policy says what is, and what is not, allowed.** It *defines* security for a given site or system — which means the word "secure" is meaningless until a policy is stated. There is no property a system has in isolation; there is only conformance to a stated partition of allowed and disallowed states.
 
 **Composition of policies** is where this gets dangerous. When two policies are combined and they conflict, the discrepancies themselves create vulnerabilities. Nothing about two individually-sound policies guarantees their composition is sound — a recurring theme wherever two systems with different assumptions are integrated.
+
+### Formally: A Policy Partitions States
+
+Lecture 8 restates the same idea as a state machine, which is the form the theory unit needs:
+
+> A policy partitions system states into:
+>
+> - **Authorized (secure)** — states the system can enter
+> - **Unauthorized (nonsecure)** — if the system enters any of these, it is a security violation
+>
+> A **secure system** starts in an authorized state and **never** enters an unauthorized state. A **breach of security** occurs when a system enters an unauthorized state.
+
+Security is therefore a property of **every reachable state**, not of a snapshot — which is exactly why the general question of whether a system is secure turns out to be [[Safety Problem|undecidable]].
+
+### The Cheating Example
+
+The lecture's test of whether the definition has teeth:
+
+> Policy disallows cheating, including copying homework with or without permission. A class has students do homework on a computer. **Anne forgets to read-protect her homework file. Bill copies it.** Who cheated?
+
+| | Verdict | Why |
+|---|---|---|
+| **Bill** | **Cheated** | The policy forbids copying; he did it; the system entered an unauthorized state (Bill holding a copy of Anne's assignment) |
+| **Anne** | **Did not breach security** | Read-protecting her homework was **not required by the policy**. Had the policy said students must read-protect homework files, she *would* have breached it — she did not do this |
+
+The lecture adds that even if copying is not explicit in the computer security policy it is certainly implicit: *it is not credible that a unit of the university allows something the university as a whole forbids, unless the unit explicitly says so.*
+
+> **Why this example is doing real work, derived.** It separates *carelessness* from *violation*. Anne's omission is what made the breach possible and is still not a breach, because a policy is a written partition of states and nothing else — blame tracks the document, not the causal chain. The same slide quietly makes the opposite point too: the policy could easily have been written to make Anne's omission a violation, and whether it was is a drafting decision made before anyone ran any code. That is the practical content of "the word *secure* is meaningless until a policy is stated."
 
 ## Mechanism
 
@@ -61,6 +89,9 @@ Every one of these is an assumption, not a guarantee. A policy that partitions a
 ## See Also
 
 - [[Computer Security]]
+- [[Safety Problem]]
+- [[Security Models]]
+- [[Access Control Matrix]]
 - [[Security Assurance]]
 - [[Security Services]]
 - [[Security Design Principles]]

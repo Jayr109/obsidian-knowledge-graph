@@ -4,7 +4,7 @@ type: source
 tags: [complexity, NP, verifiers, NP-completeness, Cook-Levin, CSCE-411]
 sources: []
 course: CSCE 411
-updated: 2026-04-21
+updated: 2026-09-13
 ---
 
 Lecture 27 deepens the NP verifier framework with concrete examples and introduces NP-completeness via the Cook-Levin theorem. The learning objective is to be able to *prove* a problem is in NP by explicitly constructing a verifier and proving its correctness.
@@ -93,3 +93,4 @@ To prove L ∈ NP, provide:
 - [[Lecture 26 — NP]]
 - [[Decidability and Undecidability]]
 - [[CSCE 411]]
+- [[Vertex Cover]]

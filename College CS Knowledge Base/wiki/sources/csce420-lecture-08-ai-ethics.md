@@ -4,10 +4,13 @@ type: source
 tags: [lecture, csce420, ethics, fairness, accountability, regulation, future-of-work]
 sources: []
 course: CSCE 420
+exam: excluded
 updated: 2026-09-01
 ---
 
 Slide deck 8 of [[CSCE 420]], by [[Yoonsuck Choe]]. 20 slides (19 of content plus a LaTeX artifact page). The closing deck of the course, covering AI ethics: societal impact, bias and fairness, accountability, transparency, privacy, the future of work, misuse, regulation, and the responsibilities of AI developers.
+
+> **Exam scope.** AI Ethics is **excluded** from both exams per the instructor.
 
 ## Structure
 

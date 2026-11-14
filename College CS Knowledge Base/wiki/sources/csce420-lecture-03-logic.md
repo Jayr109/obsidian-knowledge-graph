@@ -4,10 +4,13 @@ type: source
 tags: [lecture, csce420, logic, propositional, first-order, resolution, theorem-proving]
 sources: []
 course: CSCE 420
+exam: midterm / final
 updated: 2026-09-01
 ---
 
 Slide deck 3 of [[CSCE 420]], by [[Yoonsuck Choe]]. 145 slides — the second-largest deck. Covers knowledge representation, propositional logic, first-order logic, and automated theorem proving by resolution. The predicate-calculus treatment follows Chang & Lee, *Symbolic Logic and Mechanical Theorem Proving* (1973); substitution notation follows Russell & Norvig.
+
+> **Exam scope.** This deck straddles the boundary. Per the course scope table, the midterm covers Deck 3 **through unification (slide 99)**; everything after that belongs to the final, which is not cumulative. Frontmatter is `exam: midterm / final` for that reason.
 
 ## Structure
 

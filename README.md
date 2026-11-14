@@ -4,7 +4,8 @@ An automated, LLM-maintained knowledge base. Course material and reference docum
 a cross-linked Obsidian wiki comes out — with every page carrying structured frontmatter,
 citations back to its sources, and `[[wiki-links]]` that render as a navigable graph.
 
-Built with the Claude API. Six independent vaults, ~485 markdown pages.
+Maintained with Claude Code against a per-vault contract. Six independent vaults, 628
+markdown pages.
 
 ## The idea
 
@@ -66,14 +67,20 @@ Because `sources:` is required, every claim traces back to the document it came 
 
 | Vault | Pages | Subject |
 |---|---|---|
-| College CS | 305 | Algorithms, systems, AI, ML, security (CSCE 313 / 411 / 420 / 421 / 465) |
-| College GEOL101 | 78 | Geology |
-| College STAT212 | 50 | Statistics |
-| College MGMT309 | 28 | Corporate finance and valuation |
-| First Trading | 14 | Market structure and strategy notes |
-| General | 9 | Everything else |
+| College CS | 467 | Algorithms, systems, AI, ML, security (CSCE 313 / 411 / 420 / 421 / 465), plus corporate finance and valuation |
+| College GEOL101 | 75 | Geology |
+| College STAT212 | 47 | Statistics: regression, ANOVA, categorical data, nonparametric methods |
+| College MGMT309 | 25 | Survey of management |
+| First Trading | 9 | Market structure and strategy notes |
+| General | 5 | Everything else |
 
-The CS vault indexes 302 pages: 141 concepts, 53 algorithms, 6 courses, 6 people, 94 sources.
+Counts are pages under each vault's `wiki/` as of 2026-11-13. The CS vault breaks down as
+219 concepts, 65 algorithms, 1 data structure, 6 courses, 6 people, 169 sources and an
+overview.
+
+The directory names under `wiki/` vary by subject. The statistics vault adds `theorems/`,
+`derivations/` and `methods/`; the management vault adds `frameworks/`; the trading vault
+adds `strategies/` and `instruments/`.
 
 ## On the lint pass
 
@@ -82,6 +89,32 @@ A second, independent checker covering 12 problem classes the standing audit ign
 LaTeX escapes, unbalanced `[[ ]]`, self-links, dangling `sources:` slugs, near-duplicate page
 bodies — found four real defects on its first run, three of them introduced by the agent
 itself. Generated knowledge bases need adversarial checking, not just generation.
+
+## Tools
+
+Two Python scripts live in `tools/`.
+
+**`kb_lint.py`** is the standing audit. It runs 25 checks over one vault: 21 fail the run
+and 4 print `info` only, because every strict version of those four produced mostly false
+positives. It needs only the standard library.
+
+```bash
+python tools/kb_lint.py "College CS Knowledge Base"
+```
+
+Run it from the repository root. It exits 1 if any failing check finds a defect. The
+failing checks cover duplicate titles, broken wiki-links, orphans, frontmatter gaps, a
+`type:` that disagrees with the page's directory, `sources:` slugs with no source page,
+drift between `index.md` and the pages on disk, malformed table rows, missing ledes and
+`## See Also` footers, and `raw/` citations that point at nothing.
+
+**`transcribe.py`** turns a lecture recording into ingestable text: a timestamped
+transcript, word-level timestamps, and one frame per detected slide change. It needs
+`faster-whisper` and `ffmpeg`, plus `yt-dlp` when given a URL.
+
+```bash
+python tools/transcribe.py lecture.mp4 --out raw/lecture-12
+```
 
 ## A note on `raw/`
 

@@ -1,7 +1,7 @@
 # Index
 
 Master catalog of all wiki pages. Updated on every ingest and after every filed query.
-**Current count:** 307 pages (145 concepts, 53 algorithms, 1 data structure, 6 courses, 6 people, 95 sources, 1 overview) | **Last updated:** 2026-09-03
+**Current count:** 467 pages (219 concepts, 65 algorithms, 1 data structure, 6 courses, 6 people, 169 sources, 1 overview) | **Last updated:** 2026-11-08
 
 ---
 
@@ -13,7 +13,7 @@ Master catalog of all wiki pages. Updated on every ingest and after every filed 
 - [[CSCE 313]] — Introduction to Computer Systems; instructor: Sandeep Kumar; POSIX/systems programming
 - [[Corporate Finance and Valuation]] — undergraduate finance; TVM, NPV, risk, market efficiency; modules 3–12
 - [[CSCE 420]] — Artificial Intelligence; instructor: Yoonsuck Choe; R&N 4th ed.; search, logic, probability, learning
-- [[CSCE 421]] — Machine Learning; instructor: Shuiwang Ji; Learning From Data; linear models -> softmax
+- [[CSCE 421]] — Machine Learning; instructor: Shuiwang Ji; linear models -> softmax -> loss functions -> MLPs -> CNNs -> transformers/LLMs
 - [[CSCE 465]] — Computer & Network Security (465/765); instructor: Guofei Gu; crypto, OS, network, AI agent security
 
 ## People
@@ -99,6 +99,8 @@ Master catalog of all wiki pages. Updated on every ingest and after every filed 
 - [[Neural Networks]] — perceptron limits; hidden-unit counting; feature engineering vs depth
 - [[Deep Learning]] — CNN/RNN/Transformer/deep RL; three fuels; four limitations
 - [[Reinforcement Learning]] — reward, Q-function, credit assignment; why tables fail
+- [[Autoencoders]] (CSCE 420 + 421) — input copied to target; bottleneck = compression; hidden code = embedding; self-supervised
+- [[Large Language Models]] — masked-LM / next-sentence pretraining, BERT vs GPT, RLHF three steps, agentic AI
 
 ## Concepts — Corporate Finance and Valuation
 - [[Time Value of Money]] — present value, future value, discounting; perpetuity + PV formulas are all you need
@@ -153,9 +155,9 @@ Master catalog of all wiki pages. Updated on every ingest and after every filed 
 - [[Inductive Bias]] — choosing among hypotheses that all fit; Ockham's razor
 - [[Entropy and Information Gain]] — average surprisal; the criterion behind CHOOSE-ATTRIBUTE
 - [[Linear Separability]] — what a perceptron can represent; XOR cannot be (Minsky & Papert 1969)
-- [[Unsupervised Learning]] — no teacher; requires redundancy; clustering to feature mapping
+- [[Unsupervised Learning]] (CSCE 420 + 421) — no teacher; requires redundancy; clustering to feature mapping
 - [[Recurrent Neural Networks]] — cycles give memory; the Elman/SRN context layer
-- [[Convolutional Neural Networks]] — AlexNet; learned kernels resemble mammalian receptive fields
+- [[Convolutional Neural Networks]] (CSCE 420 + 421) — AlexNet; learned kernels resemble mammalian receptive fields
 - [[Transformers]] — self-attention over Q/K/V; parallelizable; the basis of LLMs
 - [[Long Short-Term Memory]] — input/forget/output gates; long-term retention in RNNs
 - [[Deep Reinforcement Learning]] — deep for perception, RL for action; value/policy/actor-critic/model-based
@@ -168,6 +170,20 @@ Master catalog of all wiki pages. Updated on every ingest and after every filed 
 - [[Softmax Function]] — R^K to a distribution; shift-invariant; Jacobian p_i(delta_ij - p_j)
 - [[Cross-Entropy Loss]] — distance between distributions; one-hot collapses it to -log of the true class
 - [[Maximum Likelihood Estimation]] — why cross-entropy is derived rather than chosen
+- [[Overfitting]] — the M=9 polynomial; zero training error, garbage between the points
+- [[Regularization]] — penalty on weight size; lambda dials between overfit and underfit
+- [[Model Selection]] — hyperparameters training error cannot pick; train/validation/test, k-fold CV
+- [[Loss Functions]] — six losses unified by the margin y_i s_i; convex surrogates for zero-one
+- [[Convexity]] — no local minima that are not global; the criterion that licenses gradient descent
+- [[Convolution]] — sliding dot product; box filter, Sobel; (N-F)/stride+1; CNNs learn the kernel
+- [[Batch Normalization]] — zero-mean unit-variance per feature, learnable gamma/beta; train vs test differ; FINAL EXAM topic
+- [[Activation Functions]] — sign, tanh, ReLU; saturation and the vanishing gradient; dead ReLU
+- [[Dropout]] — randomly zero units; redundancy and ensemble views; the add-noise/average-out pattern
+- [[Transfer Learning]] — freeze generic early layers, finetune the specific late ones; the 2x2 decision table
+- [[CNN Architectures]] — LeNet, AlexNet, VGG, GoogLeNet, ResNet; why 3x3 stacks and why identity shortcuts
+- [[Attention Mechanism]] — data-dependent weights; Q/K/V; sqrt(Dk) scaling; multi-head; positional encoding
+- [[Eigendecomposition]] — S = QLQ^T for symmetric S; orthogonal matrices; the spectral rank-1 form
+- [[Singular Value Decomposition]] — R = USV^T for any matrix; truncated SVD is the best low-rank approximation
 
 ## Concepts — CSCE 465 (Security)
 - [[Computer Security]] — the umbrella; threat/attack/attacker/asset; four goals; why security is hard; InfoSec = CompSec + ComSec
@@ -182,6 +198,64 @@ Master catalog of all wiki pages. Updated on every ingest and after every filed 
 - [[Prompt Injection]] — direct vs indirect as a channel distinction; why encryption cannot fix it; required/helpful/irrelevant
 - [[OpenClaw]] — HW1 platform; 10-interface attack surface, 470 advisories; ask=off by default; per-layer checks, no unified policy
 - [[CVE-2024-5565]] — Vanna.AI prompt-injection-to-RCE; exec() on LLM output; the Task 4 advisory template
+- [[Cryptography]] — plaintext/ciphertext/key; not compression; Kerckhoffs (secret keys vs secret algorithms); rarely the weakest link
+- [[Cryptanalysis]] — ciphertext-only / known-plaintext / chosen-plaintext; brute force cost table; the recognition problem
+- [[Cipher Security Models]] — unconditional H(p)=H(p|c), provable (reduction), computational (what everything actually meets)
+- [[Classical Ciphers]] — Caesar, mono-alphabetic + frequency analysis, permutation; a large key space is necessary but not sufficient
+- [[One-Time Pad]] — Shannon's two requirements; XOR construction; key reuse gives c1 XOR c2 = p1 XOR p2
+- [[Cryptography Taxonomy]] — by key count (hash/secret/public) and processing (stream/block); which family delivers which service
+- [[Secret Key Cryptography]] — same key both ways; four applications incl. MIC and authentication; 5 key bits per decade; needs out-of-band key agreement
+- [[Confusion and Diffusion]] — Shannon's principles; substitution for confusion, permutation for diffusion, alternating; avalanche effect with DES round data
+- [[Block Ciphers]] — fixed k-bit blocks; block size trade-off; the seven operations; the S-box is the only nonlinear part; HW vs SW
+- [[Side-Channel Attacks]] — timing and power analysis; the implementation as target; escapes every security model's input/output assumption
+- [[Block Cipher Modes of Operation]] — ECB/CBC/OFB/CFB/CTR vs four criteria; ECB is not secure; CTR is parallel both ways and random-access
+- [[Initialization Vector]] — public but must never repeat under one key; random vs incremental generation
+- [[Message Authentication Code]] — MAC/MIC; CBC residue; no mode gives integrity; separate keys for encryption and authentication
+- [[Stream Ciphers]] — OTP with pseudo-random; PRNG, LFSR, RC4; no integrity and catastrophic keystream reuse
+- [[Content Scrambling System]] — DVD encryption; self-verifying key block, one player key breaks everything, ~16-bit effective key; DeCSS; AACS
+- [[Public Key Cryptography]] — public/private pairs; five applications; trapdoor one-way functions; RSA vs DH vs DSA
+- [[Digital Signatures]] — sign with private, verify with public; the reversed key direction; non-repudiation needs asymmetry
+- [[Public Key Infrastructure]] — CAs, certificates, chains, CRLs; a compromised CA cannot read the past but owns the future; Comodo
+- [[Hash Functions]] — message digest; four properties; weak vs strong collision resistance; why >=128 bits; encryption makes a poor hash
+- [[Birthday Attack]] — the paradox (k~23), k = 1.18*sqrt(n), the 2^(m/2) bound; collision resistance is half the output length
+- [[Hash Function Applications]] — file/user auth, commitment protocols, C+H encryption, message auth, signatures; key + nonce pattern
+- [[User Authentication]] — identification is a search, authentication a comparison; four bases; address- and crypto-based
+- [[Password Authentication]] — one-way storage; the 86%-guessable study; three dictionary attacks; salt defeats precomputation only
+- [[Biometrics]] — six desired qualities; not revocable; passwords are exact and biometrics statistical; multifactor arithmetic
+- [[Authentication Tokens]] — passive (copyable) vs active (crypto onboard); design issues; time-synchronized tokens
+- [[Operating System Security]] — boot chain as attack surface; BIOS passwords, hibernation, cold boot attack, TCB, event logging
+- [[Access Control Models]] — ACE/ACL; DAC vs MAC; closed vs open policy; deny priority; Linux vs Windows evaluation
+- [[Unix File Permissions]] — 10-char notation; directory bits differ; setuid/setgid/sticky; root and sudo; octal; POSIX ACLs
+- [[NTFS Permissions]] — cumulative ACEs; explicit beats inherited, deny beats allow; inheritance; move vs copy
+- [[Safety Problem]] — the general question; safety vs security; undecidability by reduction from the halting problem
+- [[Access Control Matrix]] — `P(S,O,R)`; subjects/objects/rights; ACLs and capabilities as its two compressions; DAC/MAC administration
+- [[Security Models]] — what a security model is and why one is adopted; policy types; the four-model taxonomy
+- [[Multi-Level Security]] — linear levels; the lattice model; categories; `(L,C)` labels and the dominance relation
+- [[Bell-LaPadula Model]] — no read up, no write down; simple security condition, \*-property, Basic Security Theorem
+- [[Biba Integrity Model]] — no read down, no write up; integrity vs security labels; low-water mark
+- [[Chinese Wall Model]] — conflict-of-interest classes and company datasets; CW-simple and CW-\*-property; sanitization
+- [[Role-Based Access Control]] — access by job function; static permissions, transient membership
+- [[Buffer Overflow]] — writes past allocated memory; the attack's two halves, placement vs jump strategies, three generations
+- [[Stack Smashing]] — overflow a local buffer into the saved return address; attack procedure, address guessing, NOP sled
+- [[Shellcode]] — `execve("/bin/sh")` as injectable bytes; `int 0x80`, no null bytes, position-independent
+- [[Heap and Pointer Overflows]] — off-by-one frame-pointer hijack, heap overflow, function pointers, path traversal
+- [[Format String Vulnerabilities]] — `printf(buf)`; the variadic stack walk and `%n` as an arbitrary write
+- [[Unsafe C Functions]] — strcpy/strcat/gets/scanf/printf; strncpy and the Apache `htpasswd` fix that was also wrong
+- [[Buffer Overflow Defenses]] — correct code, NX, ASLR, bounds checking, pointer integrity, Libsafe
+- [[Stack Canaries]] — StackGuard; random vs terminator canaries, PointGuard, and how canaries are bypassed
+- [[GDB]] — the GNU debugger; `bt` and `info frame`, and why its output is a map of the stack-smashing target
+- [[Internet Protocol]] — unreliable connectionless datagram delivery; protocol numbers, routing tables, why source addresses are never checked
+- [[TCP]] — header format; the three-way handshake as reachability proof and state allocation; retransmission
+- [[ICMP]] — echo/unreachable/time-exceeded; how ping and traceroute fall out, and why it is a reconnaissance tool
+- [[HTTP]] — methods and response categories; `GET /` over telnet; the end-to-end page-load trace
+- [[SMTP]] — the MUA/MTA path and wire transcript; sending mail by hand, and why that is email spoofing
+- [[Malware]] — the needs-a-host vs independent taxonomy; trap doors, logic bombs, trojans
+- [[Computer Viruses]] — four stages, virus structure, macro viruses, polymorphism, four generations of antivirus
+- [[Worms]] — propagation without user action; hit-list and permutation scanning; detection and defense
+- [[Notable Worms]] — Morris, Code Red I/v2/II, Nimda, Slammer and Blaster/Welchia, in order
+- [[Search Worms]] — finding targets by search query; MyDoom, Santy, and Google's result-side countermeasure
+- [[Botnets]] — centralized vs distributed C&C, the IRC life-cycle, Storm, and BotHunter dialog correlation
+- [[Stuxnet]] — ICS/PLC target, 4 zero-days, 2 stolen certificates, USB across the air gap
 
 ## Algorithms
 - [[Turing Reductions]] — prove undecidability by reducing FROM known undecidable language
@@ -212,7 +286,7 @@ Master catalog of all wiki pages. Updated on every ingest and after every filed 
 ## Algorithms — CSCE 420 (Artificial Intelligence)
 - [[Forward and Backward Chaining]] — data-driven vs goal-driven proof; backward suits Horn form
 - [[Perceptron]] — one threshold unit; boolean gates; the geometric line; the learning rule
-- [[Backpropagation]] — gradient descent through hidden layers; the sigmoid derivative trick
+- [[Backpropagation]] — gradient descent through hidden layers; sigmoid derivative trick; CSCE 421 adds the sensitivity delta and the computational graph
 - [[Genetic Algorithms]] — population, fitness, crossover, mutation; diversity; neuroevolution
 - [[General Search Algorithm]] — one skeleton, one queuing function per strategy; visit != expand
 - [[Breadth-First Search]] — enqueue at end; complete and optimal; O(b^(d+1)) space is the problem
@@ -304,6 +378,20 @@ Master catalog of all wiki pages. Updated on every ingest and after every filed 
 - [[Logistic Regression]] — sigmoid on the linear signal; cross-entropy from MLE; no closed form
 - [[Softmax Regression]] — K-class LR; shift-invariance; binary LR is the K=2 case
 - [[Gradient Descent]] — negative gradient is steepest by Taylor; fixed rate, SGD, mini-batch
+- [[Multilayer Perceptron]] — XOR forces hidden layers; tanh for differentiability; forward propagation
+- [[Principal Component Analysis]] — max variance = min reconstruction error; Ky Fan; computed via SVD of the centered data
+
+## Algorithms — CSCE 465 (Security)
+- [[Feistel Cipher]] — block-cipher template; L_{i+1}=R_i, R_{i+1}=L_i XOR f(R_i,K_i); f never inverted; decrypt = same hardware, keys reversed; note the final swap
+- [[DES]] — 64-bit block, 16 rounds, 56-bit key; IP/FP, key schedule, mangler (E, S-boxes, P); S-box worked example; weak and semi-weak keys; sound design, key too short
+- [[Triple DES]] — Double DES falls to meet-in-the-middle (2^57); EDE with two keys gives ~112-bit strength at 1/3 DES speed
+- [[AES]] — Rijndael; 128-bit block, 128/192/256 key; 4x4 byte state; SubBytes, ShiftRows, MixColumns, AddRoundKey; not Feistel; 2^72 times DES
+- [[RSA]] — keygen from p,q,phi,e,d; encrypt/decrypt/sign/verify; correctness via Euler; factoring, probable-message, and timing attacks; blinding
+- [[Diffie-Hellman Key Exchange]] — g^(SA*SB) mod p over a public channel; discrete log; MITM and how to authenticate; phone-book mode
+- [[MD5]] — 128-bit digest; Merkle-Damgard chaining; passes F/G/H/I; T[i]=floor(2^32|sin i|); broken, colliding X.509 certs
+- [[SHA-1]] — 160-bit digest; 80 steps; W0..W15 expanded to W79; broken but not cracked (2^69 vs 2^80)
+- [[HMAC]] — defeats the extension attack on H(K|M|pad); digest-inside-a-digest with 0x36/0x5c inner and outer pads
+- [[S/Key Protocol]] — Lamport's hash; xn=H(x_{n-1}) chain spent backwards; replay-proof but does not authenticate the server
 
 ## Sources — CSCE 420 (Artificial Intelligence)
 - [[CSCE 420 Lecture 3 — Logic and Automated Theorem Proving]] — 145 slides; propositional + first-order logic, resolution, Prolog
@@ -316,18 +404,94 @@ Master catalog of all wiki pages. Updated on every ingest and after every filed 
 - [[CSCE 420 Lecture 1 — Introduction to AI]] — what AI is, six foundational disciplines, full history, deep learning summary; 42 slides
 - [[CSCE 420 Midterm Practice]] — 10 problems: strong/weak AI, A* vs IDA*, annealing, CSP/LCV, expectimax, alpha-beta, inference engines, skolemization, unification, resolution
 - [[CSCE 420 Final Exam Practice]] — 10 problems: FOL resolution, situation calculus, belief networks, info gain, network expressiveness, spiral features, SOM, deep learning domains, DQN
+- [[CSCE 420 Midterm Review]] — MIDTERM ONLY: Canvas objectives list, scope (Deck 1 one question, Deck 2, Deck 3 through unification), cheat-sheet rules
+- [[CSCE 420 Final Review]] — FINAL ONLY: post-midterm material, not cumulative; SOM and AI Ethics excluded; one FOL theorem-proving question
+- [[CSCE 420 Homework 1 — Search]] — Fall 2026 HW1: DFS notebook + written search problems; asks and conventions only, no solutions
+- [[CSCE 420 Homework 2 — Game Playing, Logic]] — Fall 2026 HW2: minimax/alpha-beta notebook, resolution-rule truth table; 5 cuts (sheet corrected Sep 17 from 4)
+- [[CSCE 420 Homework 3 — FOL, Resolution Prover, Prolog]] — Fall 2026 HW3, no key yet: FOL resolution proof (Snoopy/Garfield), two-pointer prover with set-of-support, Prolog royal family; final scope
+- [[CSCE 420 Homework 4 — Probability, Learning, Deep Learning]] — Fall 2026 HW4, live: belief network joint, intercausal inference, information gain, perceptron and XOR, gradient descent, LeNet on MNIST; records errors in the sheet; final scope
+- [[CSCE 420 Homework 1 Solutions — Fall 2026]] — instructor's released key: DFS/BFS/IDS traces, admissibility table, greedy 93 vs A* 44
+- [[CSCE 420 Homework 2 Solutions — Fall 2026]] — instructor's released key: the five alpha-beta cuts, resolution refutation, skolemization and unification tables
+- [[CSCE 420 Fall 2026 — 09-18 minmax.ipynb Walkthrough]] — 4-min in-class walkthrough of the HW2 minimax starter: three-case recursion, node type as parameter, printed call trace (midterm scope)
+- [[CSCE 420 Fall 2025 — Midterm Review Recording]] — 50-min Fall 2025 review class: scope, Prolog demo, Wumpus walkthrough (midterm scope)
+- [[CSCE 420 Fall 2025 — Whiteboard: Perceptron Decision Line]] — 14-min board derivation: threshold rule → line y = −(w1/w2)x + w0/w2; read output by comparing b to a′ (final scope)
+- [[CSCE 420 Demo — Rejection Method Animation]] — 37-s silent animation: uniform samples, accept x < 0.3, bars converge to 0.3/0.7 (Deck 5 background)
+
+## Sources — CSCE 420 Spring 2026 Lecture Recordings
+- [[CSCE 420 Spring 2026 — 01-12 Syllabus, What Is Intelligence]] — midterm scope; deck slide01
+- [[CSCE 420 Spring 2026 — 01-14 Linguistics, Neuroscience, History of AI]] — midterm scope; deck slide01
+- [[CSCE 420 Spring 2026 — 01-16 Modern AI, Limitations, Future]] — midterm scope; deck slide01, slide02
+- [[CSCE 420 Spring 2026 — 01-21 Uninformed Search]] — midterm scope; deck slide02
+- [[CSCE 420 Spring 2026 — 01-23 DFS, DLS, IDS, Informed Search Intro]] — midterm scope; deck slide02
+- [[CSCE 420 Spring 2026 — 01-28 Greedy, A*, Heuristics]] — midterm scope; deck slide02
+- [[CSCE 420 Spring 2026 — 01-30 IDA*, Iterative Improvement]] — midterm scope; deck slide02
+- [[CSCE 420 Spring 2026 — 02-02 Simulated Annealing, CSP, Game Playing]] — midterm scope; deck slide02
+- [[CSCE 420 Spring 2026 — 02-04 Alpha-Beta Pruning]] — midterm scope; deck slide02
+- [[CSCE 420 Spring 2026 — 02-06 Chance Games, Game AI History, Logic Intro]] — midterm scope; deck slide02, slide03
+- [[CSCE 420 Spring 2026 — 02-09 Knowledge Bases, Propositional Logic]] — midterm scope; deck slide03
+- [[CSCE 420 Spring 2026 — 02-11 Normal Forms, Logical Consequence, Resolution]] — midterm scope; deck slide03
+- [[CSCE 420 Spring 2026 — 02-13 HW2 Walkthrough, First-Order Logic]] — midterm scope; deck slide03
+- [[CSCE 420 Spring 2026 — 02-16 Standard Form, Skolemization]] — midterm scope; deck slide03
+- [[CSCE 420 Spring 2026 — 02-18 Composition, Unification, Factors]] — straddles the midterm/final boundary — see page note; deck slide03
+- [[CSCE 420 Spring 2026 — 02-20 FOL Resolution, Strategies]] — final scope; deck slide03
+- [[CSCE 420 Spring 2026 — 02-23 Cheat Sheet Rules, Prover Demo, Prolog]] — straddles the midterm/final boundary — see page note; deck slide03, slide04
+- [[CSCE 420 Spring 2026 — 02-25 Planning]] — final scope; deck slide04
+- [[CSCE 420 Spring 2026 — 02-27 Exam Rules, Practice Exam Walkthrough, Frame Problem, Uncertainty]] — straddles the midterm/final boundary — see page note; deck slide04, slide05
+- [[CSCE 420 Spring 2026 — 03-02 Probability, Bayes Rule]] — final scope; deck slide05
+- [[CSCE 420 Spring 2026 — 03-04 Midterm Review, Bayesian Updating, Belief Networks]] — straddles the midterm/final boundary — see page note; deck slide05
+- [[CSCE 420 Spring 2026 — 03-16 Belief Network Inference]] — final scope; deck slide05
+- [[CSCE 420 Spring 2026 — 03-18 HW3 Walkthrough, Machine Learning Intro]] — final scope; deck slide05, slide06
+- [[CSCE 420 Spring 2026 — 03-20 Supervised, Unsupervised, RL Issues]] — final scope; deck slide06
+- [[CSCE 420 Spring 2026 — 03-23 Decision Trees, Entropy]] — final scope; deck slide06
+- [[CSCE 420 Spring 2026 — 03-25 Information Gain, Neural Networks Intro]] — final scope; deck slide06
+- [[CSCE 420 Spring 2026 — 03-30 Perceptron Recap, Gradient Descent, Backprop I]] — final scope; deck slide06
+- [[CSCE 420 Spring 2026 — 03-31 Backprop II, Recorded Lecture]] — final scope; deck slide06
+- [[CSCE 420 Spring 2026 — 04-06 Demos, Autoencoders, SRN, Genetic Algorithms]] — final scope; deck slide06
+- [[CSCE 420 Spring 2026 — 04-08 HW4 Walkthrough, Genetic Algorithms, Neuroevolution]] — final scope; deck slide06
+- [[CSCE 420 Spring 2026 — 04-10 NEAT Demos, Deep Learning Intro]] — final scope; deck slide06, slide07
+- [[CSCE 420 Spring 2026 — 04-13 Final Practice Walkthrough, Deep CNNs, AlexNet]] — final scope; deck slide07
+- [[CSCE 420 Spring 2026 — 04-15 Final Review Posted, CNN Representations, Deep RL, DQN]] — final scope; deck slide07
+- [[CSCE 420 Spring 2026 — 04-17 DQN Finished, Recurrent Networks and LSTM]] — final scope; deck slide07
+- [[CSCE 420 Spring 2026 — 04-20 LSTM Applications, Attention, Transformers]] — final scope; deck slide07
+- [[CSCE 420 Spring 2026 — 04-22 LLMs, Diffusion, Deep Learning Wrap-Up]] — final scope; deck slide07
+- [[CSCE 420 Spring 2026 — 04-24 Self-Organizing Maps (Not on Exam)]] — NOT on either exam; deck slide06
+- [[CSCE 420 Spring 2026 — 04-27 SOM Evaluation, AI Ethics (Not on Exam)]] — NOT on either exam; deck slide06, slide08
 
 ## Sources — CSCE 421 (Machine Learning)
 - [[CSCE 421 T01 — Introduction and Linear Regression]] — what needs learning, perceptron hypothesis set, least squares in closed form; 20 slides
 - [[CSCE 421 T02 — Logistic Regression for Binary Classification]] — sigmoid, cross-entropy from MLE, gradient descent and SGD; 30 slides
 - [[CSCE 421 T03 — Logistic Regression: From Binary to Multi-Class]] — softmax, shift-invariance, K=2 equivalence to sigmoid; 20 slides
 - [[CSCE 421 T03 Notes — Softmax Regression Derivations]] — typed notes; softmax Jacobian and the dL/da = p - y result; 6 pages
+- [[CSCE 421 T04 — Overfitting and Regularization]] — polynomial curve fitting, RMS curves, lambda penalty, cross-validation; 14 slides (image-heavy)
+- [[CSCE 421 T05 — A Unified View of Loss Functions in Supervised Learning]] — zero-one, perceptron, square, log, hinge, exponential on one axis; convexity; 12 slides
+- [[CSCE 421 T05 Notes — A Unified View of Loss Functions]] — typed note with Ji, Lei Cai, Hao Yuan; same six losses plus the comparison figures; 4 pages
+- [[CSCE 421 T06 — Multi-Layer Perceptron/Networks]] — XOR, universal approximation, forward propagation, sensitivity and backprop; 24 slides
+- [[CSCE 421 T07 — Backpropagation by Examples]] — computational graph, upstream x local, gate patterns; 9 slides (CS231n)
+- [[CSCE 421 T08 — Convolution]] — image filtering, box filter, Sobel edges; CNNs train the filter parameters; 13 slides (image-heavy)
+- [[CSCE 421 T09 — Convolutional Neural Networks]] — conv/pool arithmetic, ReLU, batch norm, dropout, transfer learning, LeNet->ResNet; 127 slides; 46-48 optional
+- [[CSCE 421 T10 — Attention, Transformers, and Large Language Models]] — Q/K/V, multi-head, LayerNorm, GPT/BERT/seq2seq, LoRA, prompting; 41 slides
+- [[CSCE 421 HW1 Solutions — Linear Models for Handwritten Digits]] — released key; cross-entropy gradient, sigmoid thresholds, softmax vs sigmoid equivalence; 4 pages
+- [[CSCE 421 HW2 Solutions — Loss Functions, Backpropagation, MLP]] — released key; worked LFD 7.8 backprop numbers, 661-parameter count; 3 pages
+- [[CSCE 421 T11 — Principal Component Analysis and Autoencoders]] — orthogonal matrices, eigendecomposition, SVD, PCA both ways, PCA as a linear autoencoder; 32 slides
+- [[CSCE 421 T11 Notes — Principal Component Analysis and Autoencoders]] — typed note; uncentered-reconstruction derivation, gradient-descent-vs-PCA answer, 2 exercises; 8 pages
 - [[SOM Notebook — Self-Organizing Maps (2D Grid)]] — NumPy SOM on an n×n grid; BMU, Gaussian neighborhood, decay schedule; three input distributions
 
 ## Sources — CSCE 465 (Computer & Network Security)
 - [[CSCE 465 Lecture 1 — Course Introduction]] — logistics, grading, mini-research project; security definition, goals, CIA triad; 39 slides (7–18 image-only)
 - [[CSCE 465 Lecture 2 — Security Overview]] — the foundations lecture; attack taxonomy, policy/mechanism/assurance, the ten design principles; 50 slides
 - [[CSCE 465 HW1 — Build and Threat-Model an AI Agent]] — assignment brief; 120 pts + 200 bonus; AI agent security and prompt injection; 31 slides
+- [[CSCE 465 Lecture 3 — Introduction to Cryptography]] — opens applied cryptography; definitions, cryptanalysis, early ciphers, OTP, primitive taxonomy; 29 slides
+- [[CSCE 465 Lecture 3a — Secret Key Cryptography (I)]] — Feistel, DES component by component, Triple DES + meet-in-the-middle, AES, side channels; ~63 slides
+- [[CSCE 465 Lecture 3b — Secret Key Cryptography (II): Modes of Operation]] — ECB/CBC/OFB/CFB/CTR, IVs, MACs, stream ciphers, CSS/DeCSS post-mortem; ~37 slides
+- [[CSCE 465 Lecture 4 — Hash Functions]] — properties, birthday attack, six applications, MD5, SHA-1, HMAC; ~47 slides
+- [[CSCE 465 Lecture 5 — Public Key Cryptography]] — RSA, Diffie-Hellman, digital signatures, PKI and CAs, the Comodo breach; ~59 slides
+- [[CSCE 465 Lecture 6a — User Authentication]] — four bases, passwords and salt, S/Key, biometrics, tokens; ~46 slides
+- [[CSCE 465 Lecture 7 — Operating System Security]] — boot chain, cold boot, DAC/MAC, Unix permissions, NTFS; ~42 slides
+- [[CSCE 465 Lecture 8 — Security Theory: Security Policies and Models]] — safety undecidability, BLP, Biba, Chinese Wall, RBAC; 47 slides
+- [[CSCE 465 Lecture 9 — Software Security: Buffer Overflow]] — stack smashing, heap/format-string variants, NX/ASLR/canaries; ~47 slides
+- [[CSCE 465 Recitation — gdb Basics]] — gdb commands, `bt` and `info frame`, two worked sessions; 11 slides
+- [[CSCE 465 Lecture 10 — Network Basics]] — IP, TCP, ICMP, HTTP, SMTP; telnet by hand; 26 slides
+- [[CSCE 465 Lecture 11 — Malware]] — viruses, worms, botnets, Stuxnet; 57 slides
 
 ## Sources — Course Notes
 - [[Course Notes — Section 1: Foundational Notation]] — mathematical notation reference

@@ -62,6 +62,10 @@ Linux (created by Linus Torvalds in 1991, GPL-licensed in 1992) is the dominant 
 - [[File Systems]] — persistent named storage.
 - [[Threads]] — concurrent execution within a process.
 
+## The Security View
+
+[[CSCE 465]] revisits this material from the attack side in [[Operating System Security]] — the boot chain as attack surface, hibernation and cold-boot exposure, and the trusted computing base — plus [[Access Control Models]] for how the kernel actually decides each access.
+
 ## See Also
 
 - [[Processes]]
@@ -69,3 +73,5 @@ Linux (created by Linus Torvalds in 1991, GPL-licensed in 1992) is the dominant 
 - [[System Calls]]
 - [[Interrupts and Exceptions]]
 - [[CSCE 313]]
+- [[Operating System Security]]
+- [[Access Control Models]]

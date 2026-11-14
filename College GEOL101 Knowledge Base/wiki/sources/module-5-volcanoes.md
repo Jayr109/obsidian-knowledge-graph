@@ -178,3 +178,4 @@ Volcanoes eject pulverized rock and lava fragments; volatiles = 1–8% of magma 
 - [[Magma]]
 - [[Module 4: Igneous Rocks]]
 - [[Module 2: Plate Tectonics]]
+- [[Hot Spots and Mantle Plumes]]

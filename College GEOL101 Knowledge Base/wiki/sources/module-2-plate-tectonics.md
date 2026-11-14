@@ -111,3 +111,4 @@ Module 2 covers the development of the theory of plate tectonics, from Wegener's
 - [[Paleomagnetism]]
 - [[Module 1: The Science of Geology]]
 - [[Module 5: Volcanoes]]
+- [[Volcanoes]]

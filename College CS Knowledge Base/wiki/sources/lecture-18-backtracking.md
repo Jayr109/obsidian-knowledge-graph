@@ -4,7 +4,7 @@ type: source
 tags: [backtracking, dynamic-programming, memoization, lis, recursion]
 sources: [lecture-18-backtracking]
 course: CSCE 411
-updated: 2026-04-09
+updated: 2026-09-13
 ---
 
 # Lecture 18 — Recursive Backtracking
@@ -73,3 +73,4 @@ DP converts exponential backtracking into polynomial time **when the number of d
 - [[Longest Increasing Subsequence]]
 - [[Subset Sum]]
 - [[CSCE 411]]
+- [[Backtracking]]

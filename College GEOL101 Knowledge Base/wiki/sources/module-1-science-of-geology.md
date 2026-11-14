@@ -86,3 +86,4 @@ Module 1 introduces the field of geology, the scientific method, the origin and 
 - [[Earth's Internal Structure]]
 - [[Igneous Rocks]]
 - [[Module 2: Plate Tectonics]]
+- [[Sedimentary Rocks]]

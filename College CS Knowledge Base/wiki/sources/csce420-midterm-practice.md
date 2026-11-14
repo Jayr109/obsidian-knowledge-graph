@@ -4,7 +4,8 @@ type: source
 tags: [csce420, exam, practice, search, games, logic]
 sources: []
 course: CSCE 420
-updated: 2026-08-25
+exam: midterm
+updated: 2026-09-13
 ---
 
 Practice midterm for [[CSCE 420]] (`raw/CSCE420_midterm-practice.pdf`, 2 pages, 10 problems × 10 points). It covers the first half of the course: philosophy, search, games, and logic. **No answer key is included** — worked solutions on the linked pages were derived during ingest and are marked as such.
@@ -49,3 +50,5 @@ Practice midterm for [[CSCE 420]] (`raw/CSCE420_midterm-practice.pdf`, 2 pages, 
 - [[CSCE 420 Final Exam Practice]]
 - [[Adversarial Search]]
 - [[Heuristic Search]]
+- [[Minimax]]
+- [[Local Search]]

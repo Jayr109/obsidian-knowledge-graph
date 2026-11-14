@@ -4,6 +4,7 @@ type: source
 tags: [lecture, csce420, search, uninformed, informed, csp, game-playing]
 sources: []
 course: CSCE 420
+exam: midterm
 updated: 2026-09-01
 ---
 

@@ -59,3 +59,5 @@ ARP has no authentication mechanism, creating a well-known security vulnerabilit
 - [[CIA Triad]] — ARP spoofing is an origin-integrity (authentication) failure
 - [[Computer Security]]
 - [[CSCE 313 Lecture 22 — Network Security: The Data Link Layer]]
+- [[Internet Protocol]]
+- [[ICMP]]
