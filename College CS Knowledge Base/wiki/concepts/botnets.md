@@ -85,6 +85,8 @@ The lecture's comparison table:
 
 This is the [[Guofei Gu|BotHunter]] work the KB has referenced since Lecture 1, now arriving as course content. It is also why [[Security Threat Landscape|the Lecture 2 threat survey]] gave botnets their own slide.
 
+Lecture 14 is the background the title assumes: see [[Intrusion Detection Systems]], and [[Base-Rate Fallacy]] for the false-alarm problem that correlating a whole sequence is an answer to. Lecture 12 shows one use of a botnet in detail — the DNS amplification attack on [[Smurf Attack]].
+
 ## Open Research Questions
 
 The lecture closes the section with its own open problems:
@@ -105,4 +107,7 @@ The lecture closes the section with its own open problems:
 - [[Guofei Gu]]
 - [[CIA Triad]]
 - [[SMTP]]
+- [[Intrusion Detection Systems]]
+- [[Base-Rate Fallacy]]
+- [[Smurf Attack]]
 - [[CSCE 465]]

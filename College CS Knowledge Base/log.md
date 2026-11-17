@@ -3,6 +3,102 @@
 Append-only operation log. Newest entries first.
 Parse recent entries: `grep "^## \[" log.md | head -10`
 
+## [2026-11-16] lint | Whole-KB check before and after the Lecture 12–14 ingest, all six bases
+
+`tools/kb_lint.py` was run on all six bases **before** touching anything and again after: every failing check passes on every base both times. Page counts recomputed from disk: CS **493** (467 + 26), GEOL 75, STAT 47, MGMT 25, Trading 9, General 5 — **654** in total.
+
+A second-opinion scan was rebuilt in the scratchpad (again — it was created on 09-01, recreated on 11-04, and still does not live in `tools/`) covering twelve classes the linter does not: mojibake, unbalanced `[[ ]]`, self-links, duplicate See Also entries, sections after See Also, stubs, empty sections, malformed `updated:` values, unescaped alias pipes in table rows, TODO/TBD markers, title whitespace, and multiple H1s. **Nothing actionable in any base.** What it did print:
+
+- **Four "unbalanced bracket" hits in CS, all false positives** and all the same known class — nested-list and tree notation (`[[7, [3, 8, 1], [15, 9]], …]`, `MAX[8, MIN[3,7]]`) on the CSCE 420 minimax and homework pages.
+- **Four pages under 80 words across the bases.** Three are instructor pages (two in CS, one in GEOL), short by nature. The fourth, [[Practice — Undecidability]], is a real thin page from April: it lists four topics and no problems. Left as is and reported; the other early practice-set pages deserve the same look.
+- **Two of the scan's own checks were wrong on the first run** — an alias-pipe regex that lost a backslash and flagged every table row containing a link (382 hits, all false), and an empty-section test that stripped code fences first and so flagged every section whose only content was a code block. Both fixed and re-run before anything was concluded from them. The linter's check 14 was right throughout.
+
+**Pre-existing defects found by reading, not by either tool, and fixed:**
+
+- [[ICMP]] linked the Welchia counter-worm to [[Botnets]]; Welchia is on [[Notable Worms]].
+- [[Data Link Layer]] listed [[Computer Networking]] twice in See Also.
+- The overview said *six* cryptography lectures and listed five.
+- The overview's CSCE 465 gap list still said *"No hash construction or public-key algorithm yet"* — stale since Lectures 4 and 5 landed in September and October.
+- The overview's `updated:` field read 2026-10-08 after three later edits.
+
+**Still open, unchanged by this pass:** check 27 reports 97 of 199 archived `raw/` files that no page cites (60 top-level, 34 CSCE 420 Spring transcripts, 3 assets) — the citation-convention backlog, not missing pages; check 22 lists 10 concept pages over 1,200 words; and the stale-phrase check still points at the *not yet ingested* lecture lists for CSCE 411 and CSCE 313, which are accurate.
+
+---
+
+## [2026-11-16] ingest | CSCE 465 Lectures 12 (Vulnerability Analysis), 13 (Firewall), 14 (IDS) — 26 new pages, 9 updated with content
+
+Four files handed over, **one a duplicate**: `10_network_basics-1 (1).pdf` hashed identical to `raw/CSCE465_10_NetworkBasics.pdf` (`74aa980c…`), ingested 2026-11-04. That is the **fourth `(1)`-suffixed re-download** — after the 3b deck, the Lecture 8 deck and the gdb deck. Nothing was done with it.
+
+The other three finish most of the **network security** row of the course outline, in exactly the outline's order.
+
+**Sources (3):** `CSCE465_12_VulnerabilityAnalysis.pdf` (30 PDF pages, two-up, **60 slides**), `CSCE465_13_Firewall.pdf` (17 pages, 34 slides) and `CSCE465_14_IDS.pdf` (12 pages, **23 slides — the shortest lecture deck**).
+
+**Pages created (26):** from L12 — [[Vulnerability Analysis]], [[Port Scanning]], [[OS Fingerprinting]], [[IP Spoofing]], [[SYN Flooding]], [[TCP Reset Attack]], [[TCP Session Hijacking]], [[ARP Poisoning]], [[Smurf Attack]], [[ICMP Redirect Attack]]; from L13 — [[Firewalls]], [[Packet Filtering]], [[Session Filtering]], [[Proxy Firewalls]], [[FTP]], [[Network Address Translation]]; from L14 — [[Intrusion Detection Systems]], [[Misuse and Anomaly Detection]], [[IDS Performance Metrics]], [[Base-Rate Fallacy]], [[Host-Based Intrusion Detection]], [[Network Intrusion Detection]], [[Insertion and Evasion Attacks]]; plus the three source pages.
+
+**Pages that took content (9):** [[Internet Protocol]] (the header layout), [[TCP]] (flag bits, initial sequence numbers, the window, an attack table), [[ICMP]] (the full type list, *Not authenticated!*), [[ARP]] (packet format and the request/reply figure), [[Security Design Principles]] (a firewall-and-IDS section), [[Security Attack Taxonomy]] (the vulnerability term and a worked-instances table), the [[CSCE 465]] course page, `index.md` and `wiki/overview.md`. Each of the six concept pages got the relevant slug in `sources:` and the source page links back.
+
+**Pages that took links only (20):** [[System Calls]] and [[Computer Networking]] (short pointer text, the same pattern as the Lecture 7 Security View sections), [[Bayes Rule]], [[Data Link Layer]], [[Security Policy and Mechanism]], [[Computer Security]], [[Security Assurance]], [[Security Threat Landscape]], [[User Authentication]], [[Worms]], [[Computer Viruses]], [[Search Worms]], [[Botnets]], [[HTTP]], [[SMTP]], [[Access Control Models]], [[Biometrics]], [[Shellcode]], [[Operating System Security]] and [[Guofei Gu]]. **No slug added to any of them**, and `updated:` left alone, as for the Lecture 8 back-links.
+
+### What was deliberately not created
+
+- **No second ARP page for the protocol.** [[ARP]] from CSCE 313 already had the exchange and a spoofing section, with its defences marked *not covered in L22, general knowledge*. Lecture 12 covers them. The split is **protocol vs attack**: the CSCE 313 page keeps the protocol and gained the packet format; [[ARP Poisoning]] holds the attack, the before/after caches and the four defences.
+- **No new IP, TCP or ICMP pages.** Lecture 12 re-presents all three headers. The new material went onto the Lecture 10 pages; the attack pages link to them.
+- **No VPN or IPSec page.** One slide, three bullets, and IPSec is only named. It is a section on [[Firewalls]].
+- **SYN cookies and DNS amplification are sections, not pages** — on [[SYN Flooding]] and [[Smurf Attack]] respectively, which is where the deck puts them.
+
+### Three predictions closed in twelve days
+
+When Lecture 10 was ingested on 2026-11-04, [[TCP]] and [[Internet Protocol]] each recorded a derived consequence of a protocol diagram: that the responder allocates state on the SYN (*the SYN flood*), that the handshake is only as strong as the initial sequence number is unguessable (*sequence-number prediction*), and that an unverified source address enables *reflection and amplification*. Lecture 12 teaches all three as named attacks. Both pages now say so. The same lecture also carries out the threat [[User Authentication]] recorded for address-based authentication in October.
+
+The KB's other guess was wrong. The 11-04 notes said intrusion detection was the natural successor to malware. The actual order was vulnerability analysis, firewalls, then intrusion detection — **the course outline's order, exactly**. The outline is the better predictor, and on that basis **Lecture 15 should be web security**.
+
+### The first CSCE 420 / CSCE 465 link
+
+The Bayesian detection rate on Lecture 14's slide 12 is [[Bayes Rule]] with the labels changed: intrusion for disease, alarm for positive test. CSCE 420's example (99% accurate test, 1-in-10,000 disease, just under 1%) and this deck's (perfect detection, 10⁻⁵ false alarms, base rate 2×10⁻⁵, 66%) are set side by side on [[Base-Rate Fallacy]]. A script confirmed no CSCE 465 concept page linked a CSCE 420 or 421 page before this. The CSCE 420 page got a one-line pointer and a See Also entry, no slug — the Lecture 8 / halting-problem precedent.
+
+A second cross-course link goes to CSCE 313: Forrest's anomaly detector reads the system-call trace, and [[System Calls]] is why that trace is a complete record of what a process does.
+
+### One fact used three times
+
+*Each OS implements its TCP stack differently* is how [[OS Fingerprinting]] identifies a host (Lecture 12), why a network IDS cannot be sure what the end host will reconstruct (Lecture 14, *ambiguities in protocols and operating systems*), and what a [[Proxy Firewalls|proxy]] removes by rebuilding the connection (Lecture 13, *protect against fragmentation problem*). That thread is the reason to read the three decks together, and it is on all three pages.
+
+### Arithmetic checked
+
+- **RST attack:** 2³² / 2¹⁶ = 65,536; the slide says 65535. *~4 min on DSL* works out to about 273 packets a second, roughly 87 kbit/s of 40-byte packets — plausible.
+- **Base rate:** 2×10⁻⁵ / (2×10⁻⁵ + (1 − 2×10⁻⁵)×10⁻⁵) = 0.6667. The slide's 66% is correct, rounded down. A five-row sensitivity table was added and is marked derived.
+- **DNS amplification:** 1500 / 60 = 25×; the ratio is not on the slide.
+- **Forrest's sliding window:** an 8-call trace gives 5 windows of length 4; the slide lists the first four. *k* = 4 is implied, never stated.
+
+### Extraction
+
+All three decks extract cleanly as text — **no font mangling**. The work was in the figures.
+
+- **Lecture 12 has six image-only slides, all recovered** by rendering: the stealth-scan diagram with its two Wireshark captures (13), the TTL-by-OS table (16, read at 5× zoom), two captioned-by-nothing SYN packets (17), and the IP (19) and ARP (41, 42) figures. Slide 17's hex dumps show TTL bytes `80` and `40`, which is what identifies the two hosts as a Windows and a Linux/Unix stack — the slide itself says nothing.
+- **Lecture 13's three comparison tables could not be read from text**: the cells extract as a loose column with merged and blank cells lost. Read from the renders and merged into one table on [[Firewalls]]. Slide 18 (the session filter's two-rule policy) is a screenshot.
+- **Lecture 14 was rendered page by page.** Two figures are only partly recoverable and say so: the ROC plot has no axis ticks, and the anomaly bar chart leaves two of four measures unlabelled on the slide.
+
+**Three attributions were made during ingest and are marked as not on the slides:** the base-rate example (Axelsson 1999), the layered NIDS architecture and requirements (Bro), and insertion/evasion (Ptacek and Newsham 1998).
+
+**Deck errata recorded:** the smurf figure labels the flood *echo request* where it means *reply*; *"SYN w/ ACK number"*; *routing table* and *static routes* on the ARP slides; `172.168.10.12` and `172.19.19.5` used as if private and public respectively on the firewall slides. Lecture 13's PDF metadata is titled `12_Firewall` and dated 2021, and Lecture 14's is dated 2024 — both reused decks; Lecture 12's was exported this month.
+
+### Defects of my own, caught before the final lint
+
+- An **unescaped alias pipe inside a table row** on [[Smurf Attack]] — the recurring one. Caught on re-read, before the linter ran.
+- **Unescaped pipes in a table cell** on the Lecture 14 source page, from writing `P(A|I)` in a table. Rewritten in words.
+- **Three claims that did not survive checking** and were removed or corrected: that Lecture 14 had the lowest text density of any 465 deck (Lecture 13's is lower), that a firewall example was *"twenty years on"* (nothing supports a number), and a Search Worms paraphrase that said attackers made queries *look normal* where the page says they varied them.
+- [[Security Design Principles]] grew to 1,733 words with a four-part addition; cut back to two parts.
+
+The first full lint after writing passed on every check.
+
+### Gaps after these decks
+
+- **Web security** is the last topic in the network security row, and the working guess for Lecture 15. The outline's final row, *AI agent and security*, still has no lecture deck — it has arrived only through HW1.
+- **No Lecture 6, and 6a still implies a 6b.** Unchanged since Lecture 7.
+- **Homework position unchanged** — only HW1, only its briefing deck. Lectures 12–14 are the lecture material for the fourth assignment (*network security and intrusion detection*), which has not been seen.
+- **IPSec is named and unexplained**; the smurf and DNS attacks are given no defence in lecture.
+
+---
+
 ## [2026-11-08] ingest | CSCE 421 T11 PCA + Autoencoders (slides + notes) - 5 new pages, 5 updated
 
 Ingested the PCA deck and its companion typed note. **T11 is the first unsupervised topic in CSCE 421** - every deck through T10 is supervised.

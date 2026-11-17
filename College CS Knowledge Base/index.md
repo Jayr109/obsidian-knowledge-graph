@@ -1,7 +1,7 @@
 # Index
 
 Master catalog of all wiki pages. Updated on every ingest and after every filed query.
-**Current count:** 467 pages (219 concepts, 65 algorithms, 1 data structure, 6 courses, 6 people, 169 sources, 1 overview) | **Last updated:** 2026-11-08
+**Current count:** 493 pages (242 concepts, 65 algorithms, 1 data structure, 6 courses, 6 people, 172 sources, 1 overview) | **Last updated:** 2026-11-16
 
 ---
 
@@ -256,6 +256,29 @@ Master catalog of all wiki pages. Updated on every ingest and after every filed 
 - [[Search Worms]] — finding targets by search query; MyDoom, Santy, and Google's result-side countermeasure
 - [[Botnets]] — centralized vs distributed C&C, the IRC life-cycle, Storm, and BotHunter dialog correlation
 - [[Stuxnet]] — ICS/PLC target, 4 zero-days, 2 stolen certificates, USB across the air gap
+- [[Vulnerability Analysis]] — threat / vulnerability / attack; the five typical steps; attackers and defenders use the same tools; map of the TCP/IP examples
+- [[Port Scanning]] — ports and nmap; the SYN "stealth" scan — open answers SYN+ACK, closed answers RST+ACK
+- [[OS Fingerprinting]] — active vs passive; the FIN probe; initial TTL clusters (64/128/255); two SYNs compared field by field
+- [[IP Spoofing]] — the source address is never checked; router filtering and why it is underused; the handshake makes spoofing blind
+- [[SYN Flooding]] — half-open connections fill the queue; 90% of DoS attacks; SYN cookies store the state in the sequence number
+- [[TCP Reset Attack]] — a forged RST needs only an in-window sequence number: 2^16 guesses, not 2^32
+- [[TCP Session Hijacking]] — SYN-flood A, predict B's sequence numbers, finish B's handshake blind as A
+- [[ARP Poisoning]] — a forged ARP reply rewrites a host's cache; static entries, port security, arpwatch, RARP; no universal defence
+- [[Smurf Attack]] — ping a broadcast address as the victim; spoofing + reflection + amplification; the DNS variant at about 25x
+- [[ICMP Redirect Attack]] — a forged type 5 message makes the attacker the gateway; fix is to disable redirects
+- [[Firewalls]] — a device enforcing a policy between networks; DMZ; can and cannot; the four types and the comparison table
+- [[Packet Filtering]] — stateless per-packet ACLs; ports above 1024 left open; the four-line FTP example and its hole
+- [[Session Filtering]] — stateful inspection; decisions per connection; default deny; FTP in two rules
+- [[Proxy Firewalls]] — relays, not filters; application gateways vs circuit-level gateways; SOCKS; why TCP proxies well
+- [[FTP]] — command and data channels; active vs passive mode; why a negotiated port breaks stateless filters
+- [[Network Address Translation]] — many-to-1 and 1-to-1 mappings; hides unaddressable hosts; a side effect, not a policy
+- [[Intrusion Detection Systems]] — identifying and responding; prevent/detect/survive layers; two assumptions; the design space
+- [[Misuse and Anomaly Detection]] — signatures can't detect new attacks; anomaly detection has high false positives
+- [[IDS Performance Metrics]] — confusion matrix; detection, false positive and Bayesian detection rates; the ROC curve
+- [[Base-Rate Fallacy]] — perfect detection and a 10^-5 false alarm rate still give only 66%; why where you deploy matters
+- [[Host-Based Intrusion Detection]] — OS auditing, BSM, strace; Forrest's short sequences of system calls as a normal profile
+- [[Network Intrusion Detection]] — sensors, the layered event architecture, firewall (fail-close) vs IDS (fail-open), eight requirements
+- [[Insertion and Evasion Attacks]] — the IDS and the end host reconstruct different streams; bad checksum, TTL, fragment overlap
 
 ## Algorithms
 - [[Turing Reductions]] — prove undecidability by reducing FROM known undecidable language
@@ -492,6 +515,9 @@ Master catalog of all wiki pages. Updated on every ingest and after every filed 
 - [[CSCE 465 Recitation — gdb Basics]] — gdb commands, `bt` and `info frame`, two worked sessions; 11 slides
 - [[CSCE 465 Lecture 10 — Network Basics]] — IP, TCP, ICMP, HTTP, SMTP; telnet by hand; 26 slides
 - [[CSCE 465 Lecture 11 — Malware]] — viruses, worms, botnets, Stuxnet; 57 slides
+- [[CSCE 465 Lecture 12 — Vulnerability Analysis]] — scanning, spoofing, SYN flood, RST, hijacking, ARP poisoning, smurf, ICMP redirect; 60 slides
+- [[CSCE 465 Lecture 13 — Firewall]] — packet and session filters, proxies, the FTP example, comparison table, NAT; 34 slides
+- [[CSCE 465 Lecture 14 — Intrusion Detection System]] — misuse vs anomaly, base-rate fallacy, HIDS, NIDS, insertion and evasion; 23 slides
 
 ## Sources — Course Notes
 - [[Course Notes — Section 1: Foundational Notation]] — mathematical notation reference

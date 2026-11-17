@@ -55,4 +55,5 @@ Shellcode is only needed if the attacker chooses the **inject user code** strate
 - [[Unsafe C Functions]]
 - [[Unix File Permissions]]
 - [[Operating System Security]]
+- [[Host-Based Intrusion Detection]]
 - [[CSCE 465]]

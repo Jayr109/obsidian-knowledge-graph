@@ -56,6 +56,8 @@ The lecture asks about benefits and threats, and answers the second itself: **sp
 
 This is the same structural flaw as [[Security Attack Taxonomy|fabrication]]: the channel delivers a claim about origin that nothing verifies. IP source addresses are unauthenticated by design in [[Computer Networking|TCP/IP]] — the lecture on [[Cryptography|why security is hard]] named exactly this, *most TCP/IP protocols were not built with security in mind*.
 
+Lecture 12 carries the threat out. [[IP Spoofing]] is the forged address, and [[TCP Session Hijacking]] is the attack that gets a connection accepted under it — exactly what a host trusting `.rhosts` cannot afford.
+
 ## Crypto-Based Authentication
 
 > The user performs a requested cryptographic operation on a value (a **challenge**) that the verifier supplies.
@@ -80,4 +82,6 @@ This is the **challenge-response** pattern, and the KB has already met it twice:
 - [[Hash Function Applications]]
 - [[Public Key Cryptography]]
 - [[Security Services]]
+- [[IP Spoofing]]
+- [[TCP Session Hijacking]]
 - [[CSCE 465]]

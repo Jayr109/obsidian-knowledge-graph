@@ -70,7 +70,7 @@ Two cases where prevention is unavailable in principle:
 - **Accountability in the proper use of authorized privileges.** If a subject is genuinely authorized, there is nothing to prevent — misuse is indistinguishable from use at the moment of access. Only after-the-fact review separates them. This is the insider problem in its purest form.
 - **Modification of messages in a network.** You cannot stop an attacker who controls a link from altering bits; you can only make the alteration detectable.
 
-This asymmetry is why the course treats intrusion detection as a full topic rather than a fallback, and why [[Security Design Principles|compromise recording]] is one of the ten design principles.
+This asymmetry is why the course treats [[Intrusion Detection Systems|intrusion detection]] as a full topic rather than a fallback, and why [[Security Design Principles|compromise recording]] is one of the ten design principles.
 
 ## Trust and Assumptions
 

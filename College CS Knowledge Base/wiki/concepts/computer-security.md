@@ -41,7 +41,7 @@ The lecture separates four goals, in increasing order of pessimism about whether
 - **Recovery** — stop the attack in progress, then assess and repair the damage
 - **Survivability** — keep functioning correctly *even if* the attack succeeds
 
-Prevention is the only goal that assumes defense wins. The other three assume it does not, which is why intrusion detection is a full unit of the course rather than a fallback. Survivability is the strongest: it demands correct function under active compromise, not merely a return to correctness afterward.
+Prevention is the only goal that assumes defense wins. The other three assume it does not, which is why [[Intrusion Detection Systems|intrusion detection]] is a full unit of the course rather than a fallback. Survivability is the strongest: it demands correct function under active compromise, not merely a return to correctness afterward.
 
 Lecture 2 collapses these into three mechanism families — prevention, detection, response/recovery — with survivability folded into recovery, and argues that **prevention is more fundamental** because detection depends on an audit trail that prevention must protect. See [[Security Policy and Mechanism]].
 
@@ -76,7 +76,7 @@ The course's three organizing questions — *what?*, *how?*, *how well?* — are
 - **Design principles** — the ten constraints on how mechanisms are arranged: [[Security Design Principles]]
 - **Cryptography** — the mechanism family underlying most of the others: [[Cryptography]], [[Cryptography Taxonomy]]
 
-The distinction students most often collapse: a violation is always a violation *of a policy*, so with no policy stated, "secure" has no meaning. Mechanisms without assurance are the normal failure mode in practice — the system has a firewall, and no one has checked what it enforces.
+The distinction students most often collapse: a violation is always a violation *of a policy*, so with no policy stated, "secure" has no meaning. Mechanisms without assurance are the normal failure mode in practice — the system has a [[Firewalls|firewall]], and no one has checked what it enforces.
 
 ## Ethics
 
@@ -92,5 +92,8 @@ Because studying defense requires studying attack, [[CSCE 465]] states ethics as
 - [[Security Attack Taxonomy]]
 - [[Cryptography]]
 - [[Security Threat Landscape]]
+- [[Vulnerability Analysis]]
+- [[Firewalls]]
+- [[Intrusion Detection Systems]]
 - [[CSCE 465]]
 - [[Guofei Gu]]

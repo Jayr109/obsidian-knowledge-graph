@@ -27,7 +27,7 @@ Those three areas map onto the course's own trajectory, which ends on AI agent s
 
 The introductory lecture lists 21,000+ citations, several best-paper and Test-of-Time awards, and papers among the most-cited security work of the past four decades. Named systems include **BotHunter** (botnet detection), **FRESCO** (an SDN security framework), and the commercially transferred **SMASH**. Recognition includes IEEE Fellow and ACM Distinguished Member. The lab was advertised as having openings.
 
-The BotHunter lineage explains why the course's own [[Security Threat Landscape|threat survey]] gives botnets their own slide, and why intrusion detection is one of the four homework units.
+The BotHunter lineage explains why the course's own [[Security Threat Landscape|threat survey]] gives botnets their own slide, and why intrusion detection is one of the four homework units. The intrusion detection lecture itself is Lecture 14; see [[Intrusion Detection Systems]].
 
 **BotHunter arrived as course content in Lecture 11.** The malware lecture's botnet section closes on *BotHunter: Detecting Malware Infection Through IDS-Driven Dialog Correlation* (Gu, Porras, Yegneswaran, Fong & Lee), alongside *A Multi-perspective Analysis of the Storm (Peacomm) Worm* (Porras, Saïdi & Yegneswaran). The lecture's stated open research questions — botnet detection under varying vantage points, whether a botnet's operation can be disabled, click-fraud and phishing detection — are the lab's agenda presented as coursework. See [[Botnets]].
 
@@ -43,6 +43,7 @@ This is the clearest instance of the lab's stated "Security for AI" direction fe
 - [[Security Threat Landscape]]
 - [[Botnets]]
 - [[Malware]]
+- [[Intrusion Detection Systems]]
 - [[OpenClaw]]
 - [[AI Agent Security]]
 - [[Computer Security]]

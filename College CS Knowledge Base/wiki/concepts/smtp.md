@@ -79,6 +79,7 @@ The deck poses a multiple-choice question — *telnet can be used to:* **A.** re
 ## See Also
 
 - [[HTTP]]
+- [[FTP]]
 - [[TCP]]
 - [[Computer Networking]]
 - [[CIA Triad]]

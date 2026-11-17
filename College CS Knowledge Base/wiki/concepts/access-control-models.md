@@ -136,4 +136,6 @@ Neither is more secure in the abstract; they fail differently. Linux's model mak
 - [[Security Policy and Mechanism]]
 - [[Security Services]]
 - [[File Systems]]
+- [[Packet Filtering]]
+- [[Firewalls]]
 - [[CSCE 465]]

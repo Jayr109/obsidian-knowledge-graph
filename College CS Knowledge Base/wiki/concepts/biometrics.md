@@ -76,4 +76,5 @@ Both formulas move in the direction you would *not* want if the goal is simply "
 - [[Password Authentication]]
 - [[Authentication Tokens]]
 - [[CIA Triad]]
+- [[IDS Performance Metrics]]
 - [[CSCE 465]]

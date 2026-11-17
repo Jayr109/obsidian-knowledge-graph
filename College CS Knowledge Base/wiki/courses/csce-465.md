@@ -2,9 +2,9 @@
 title: "CSCE 465"
 type: course
 tags: [csce465, security, network-security, cryptography, course]
-sources: [csce465-lecture-01-course-introduction, csce465-lecture-02-security-overview, csce465-hw1-build-and-threat-model-an-ai-agent, csce465-lecture-03-introduction-to-cryptography, csce465-lecture-03a-secret-key-cryptography-i, csce465-lecture-03b-secret-key-cryptography-ii-modes-of-operation, csce465-lecture-05-public-key-cryptography, csce465-lecture-04-hash-functions, csce465-lecture-06a-user-authentication, csce465-lecture-07-operating-system-security, csce465-lecture-08-security-theory-policies-and-models, csce465-lecture-09-software-security-buffer-overflow, csce465-recitation-gdb-basics, csce465-lecture-10-network-basics, csce465-lecture-11-malware]
+sources: [csce465-lecture-01-course-introduction, csce465-lecture-02-security-overview, csce465-hw1-build-and-threat-model-an-ai-agent, csce465-lecture-03-introduction-to-cryptography, csce465-lecture-03a-secret-key-cryptography-i, csce465-lecture-03b-secret-key-cryptography-ii-modes-of-operation, csce465-lecture-05-public-key-cryptography, csce465-lecture-04-hash-functions, csce465-lecture-06a-user-authentication, csce465-lecture-07-operating-system-security, csce465-lecture-08-security-theory-policies-and-models, csce465-lecture-09-software-security-buffer-overflow, csce465-recitation-gdb-basics, csce465-lecture-10-network-basics, csce465-lecture-11-malware, csce465-lecture-12-vulnerability-analysis, csce465-lecture-13-firewall, csce465-lecture-14-intrusion-detection-system]
 course: CSCE 465
-updated: 2026-11-04
+updated: 2026-11-16
 ---
 
 CSCE 465/765 (Computer & Network Security) is Texas A&M's security course, taught by [[Guofei Gu]] of the SUCCESS Lab. It is a survey of the whole field rather than a deep dive into one part: the arc runs background and security principles → applied cryptography → OS and software security → network security → AI agent security. The 465 (undergraduate) and 765 (graduate) sections share lectures; 765 additionally requires a mini-research project.
@@ -72,7 +72,7 @@ Required for 765, optional but encouraged for 465. Teams of up to two design, im
 | Applied Cryptography | [[Cryptography\|Definitions and cryptanalysis]]; [[Classical Ciphers\|early ciphers]]; [[One-Time Pad]]; [[Secret Key Cryptography]] — [[Feistel Cipher]], [[DES]], [[Triple DES]], [[AES]]; [[Block Cipher Modes of Operation\|modes of operation]]; [[Stream Ciphers]]; [[Message Authentication Code\|MACs]]; [[Hash Functions\|hashes and message digests]] — [[MD5]], [[SHA-1]], [[HMAC]]; [[Public Key Cryptography]] — [[RSA]], [[Diffie-Hellman Key Exchange\|Diffie-Hellman]], [[Digital Signatures]], [[Public Key Infrastructure\|PKI]]; authentication and security handshake pitfalls |
 | Authentication | [[User Authentication]] — [[Password Authentication\|passwords]], [[S/Key Protocol\|S/Key]], [[Biometrics]], [[Authentication Tokens\|tokens]]; security handshake pitfalls |
 | OS and System Security | [[Operating System Security\|OS security]]; fundamental security theories — the [[Safety Problem\|safety problem]], [[Security Models\|security models]], [[Multi-Level Security\|MLS]], [[Bell-LaPadula Model\|BLP]], [[Biba Integrity Model\|Biba]], [[Chinese Wall Model\|Chinese Wall]], [[Role-Based Access Control\|RBAC]]; [[Access Control Models\|access control]] — [[Unix File Permissions\|Unix]] and [[NTFS Permissions\|NTFS]]; software security — [[Buffer Overflow\|buffer overflow]], [[Stack Smashing\|stack smashing]], [[Shellcode\|shellcode]], [[Format String Vulnerabilities\|format strings]], [[Buffer Overflow Defenses\|defenses]] and [[Stack Canaries\|canaries]] |
-| Network Security | [[Internet Protocol\|TCP/IP basics]] — [[TCP]], [[ICMP]], [[HTTP]], [[SMTP]]; [[Malware\|malware]] — [[Computer Viruses\|viruses]], [[Worms\|worms]], [[Notable Worms\|case studies]], [[Botnets\|botnets]], [[Stuxnet]]; vulnerability analysis; firewalls; intrusion detection; web security |
+| Network Security | [[Internet Protocol\|TCP/IP basics]] — [[TCP]], [[ICMP]], [[HTTP]], [[SMTP]]; [[Malware\|malware]] — [[Computer Viruses\|viruses]], [[Worms\|worms]], [[Notable Worms\|case studies]], [[Botnets\|botnets]], [[Stuxnet]]; [[Vulnerability Analysis\|vulnerability analysis]] — [[Port Scanning\|scanning]] and [[OS Fingerprinting\|fingerprinting]], [[IP Spoofing\|IP spoofing]], [[SYN Flooding\|SYN floods]], [[TCP Reset Attack\|RST]] and [[TCP Session Hijacking\|hijacking]], [[ARP Poisoning\|ARP poisoning]], [[Smurf Attack\|smurf]] and [[ICMP Redirect Attack\|ICMP redirect]]; [[Firewalls\|firewalls]] — [[Packet Filtering\|packet]] and [[Session Filtering\|session]] filters, [[Proxy Firewalls\|proxies]], [[Network Address Translation\|NAT]]; [[Intrusion Detection Systems\|intrusion detection]] — [[Misuse and Anomaly Detection\|misuse vs anomaly]], the [[Base-Rate Fallacy\|base-rate fallacy]], [[Host-Based Intrusion Detection\|host]] and [[Network Intrusion Detection\|network]] IDS, [[Insertion and Evasion Attacks\|evasion]]; web security |
 | AI | AI agent and security — [[AI Agent Security]], [[Prompt Injection]], [[OpenClaw]] |
 
 ## Teaching Style
@@ -100,12 +100,17 @@ The course studies threats and attacks directly, so ethics are stated as a cours
 - [[CSCE 465 Recitation — gdb Basics]] — 11 slides (one-up, TA-delivered); the debugger the buffer-overflow labs need, including `bt` and `info frame`
 - [[CSCE 465 Lecture 10 — Network Basics]] — 26 slides; deliberate background for the network security unit — IP, TCP, ICMP, HTTP and SMTP, with telnet used to speak the last two by hand
 - [[CSCE 465 Lecture 11 — Malware]] — 57 slides, the largest deck of the semester; the malware taxonomy, viruses, worms from Morris to Slammer, botnets and BotHunter, and Stuxnet
+- [[CSCE 465 Lecture 12 — Vulnerability Analysis]] — 60 slides; the definition and typical steps, then the TCP/IP attacks one protocol at a time — scanning and fingerprinting, IP spoofing, SYN flood, RST, session hijacking, ARP poisoning, smurf and ICMP redirect
+- [[CSCE 465 Lecture 13 — Firewall]] — 34 slides; packet filters, session filters, application and circuit-level proxies, with FTP pushed through each, the comparison table, and NAT
+- [[CSCE 465 Lecture 14 — Intrusion Detection System]] — 23 slides, the shortest lecture deck; misuse vs anomaly detection, the base-rate fallacy, host and network IDS, insertion and evasion
 
 Decks are two-up (two logical slides per PDF page).
 
-**Applied cryptography is complete** — secret key (ciphers, modes, MACs, stream ciphers), hashes (MD5, SHA-1, HMAC), and public key (RSA, Diffie-Hellman, signatures, PKI). **OS and system security** runs across Lectures 7 and 8 (mechanisms, then theory), **software security** opened with Lecture 9 (memory corruption), and **network security** opened with Lectures 10 and 11 (TCP/IP background, then malware). **Still outstanding: vulnerability analysis, firewalls, intrusion detection and web security**; the AI agent unit arrived early via HW1.
+**Applied cryptography is complete** — secret key (ciphers, modes, MACs, stream ciphers), hashes (MD5, SHA-1, HMAC), and public key (RSA, Diffie-Hellman, signatures, PKI). **OS and system security** runs across Lectures 7 and 8 (mechanisms, then theory), **software security** opened with Lecture 9 (memory corruption), and **network security** now runs across five decks: Lectures 10 and 11 (TCP/IP background, then malware), Lecture 12 (the attacks on those protocols), Lecture 13 (firewalls, the *prevent* layer) and Lecture 14 (intrusion detection, the *detect* layer). **Still outstanding: web security** — the one topic left in that row of the outline. The AI agent unit arrived early via HW1 and has no lecture deck yet.
 
-Decks run 1, 2, 3, 3a, 3b, 4, 5, **6a**, 7, 8, 9, 10, 11, plus a one-up gdb recitation. The **6a** label implies a **6b** — per the course outline, likely *authentication and security handshake pitfalls* — and there is no Lecture 6. Both are open gaps.
+Decks run 1, 2, 3, 3a, 3b, 4, 5, **6a**, 7, 8, 9, 10, 11, 12, 13, 14, plus a one-up gdb recitation. The **6a** label implies a **6b** — per the course outline, likely *authentication and security handshake pitfalls* — and there is no Lecture 6. Both are open gaps. Lectures 12–14 followed the outline's order exactly (*vulnerability analysis; firewalls; intrusion detection; web security*), so the working guess for **Lecture 15 is web security**.
+
+Lectures 12–14 are also the lecture material for the fourth assignment, *network security and intrusion detection*. That assignment is not in the KB; only HW1's briefing deck is.
 
 ## See Also
 
@@ -189,6 +194,29 @@ Decks run 1, 2, 3, 3a, 3b, 4, 5, **6a**, 7, 8, 9, 10, 11, plus a one-up gdb reci
 - [[Search Worms]]
 - [[Botnets]]
 - [[Stuxnet]]
+- [[Vulnerability Analysis]]
+- [[Port Scanning]]
+- [[OS Fingerprinting]]
+- [[IP Spoofing]]
+- [[SYN Flooding]]
+- [[TCP Reset Attack]]
+- [[TCP Session Hijacking]]
+- [[ARP Poisoning]]
+- [[Smurf Attack]]
+- [[ICMP Redirect Attack]]
+- [[Firewalls]]
+- [[Packet Filtering]]
+- [[Session Filtering]]
+- [[Proxy Firewalls]]
+- [[FTP]]
+- [[Network Address Translation]]
+- [[Intrusion Detection Systems]]
+- [[Misuse and Anomaly Detection]]
+- [[IDS Performance Metrics]]
+- [[Base-Rate Fallacy]]
+- [[Host-Based Intrusion Detection]]
+- [[Network Intrusion Detection]]
+- [[Insertion and Evasion Attacks]]
 - [[Side-Channel Attacks]]
 - [[CSCE 313]]
 - [[Computer Networking]]

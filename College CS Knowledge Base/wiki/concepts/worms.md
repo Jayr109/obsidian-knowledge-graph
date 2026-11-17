@@ -55,6 +55,8 @@ The lecture's survey, which is largely [[Guofei Gu]]'s own research area:
 
 > **Why automatic signature generation is listed first, derived.** [[Computer Viruses|Signature scanning]] works only once a signature exists, and [[Notable Worms|Nimda]] showed that the gap between a worm appearing and a signature being published — *"minutes or hours later"* — is longer than the worm's doubling time. Generating signatures automatically from observed traffic is the attempt to close a race that manual analysis has already lost. Honeypots serve the same end from a different angle: a machine that offers no legitimate service means **any** traffic reaching it is suspect, so detection needs no signature at all.
 
+The detection items on this list get a lecture of their own: see [[Intrusion Detection Systems]], and [[Misuse and Anomaly Detection]] for the signature-versus-behaviour split. The reconnaissance a hit list is built from is [[Port Scanning]].
+
 ## See Also
 
 - [[Notable Worms]]
@@ -65,5 +67,8 @@ The lecture's survey, which is largely [[Guofei Gu]]'s own research area:
 - [[Stuxnet]]
 - [[Buffer Overflow]]
 - [[Internet Protocol]]
+- [[Port Scanning]]
+- [[Intrusion Detection Systems]]
+- [[Misuse and Anomaly Detection]]
 - [[Guofei Gu]]
 - [[CSCE 465]]

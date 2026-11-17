@@ -2,9 +2,9 @@
 title: "Security Attack Taxonomy"
 type: concept
 tags: [csce465, security, attacks, threats, eavesdropping, mitm]
-sources: [csce465-lecture-02-security-overview, csce465-hw1-build-and-threat-model-an-ai-agent]
+sources: [csce465-lecture-02-security-overview, csce465-hw1-build-and-threat-model-an-ai-agent, csce465-lecture-12-vulnerability-analysis]
 course: CSCE 465
-updated: 2026-09-03
+updated: 2026-11-16
 ---
 
 [[CSCE 465]] classifies attacks by **which security property they violate**, giving one attack family per component of the [[CIA Triad]] plus authenticity. This is the organizing move that makes the [[Security Threat Landscape|catalogue of real threats]] analyzable: any concrete attack can be placed by asking what it breaks, not how it works.
@@ -13,6 +13,8 @@ updated: 2026-09-03
 
 - A **threat** is a *potential* violation of security, arising from flaws in design, implementation, or operation.
 - An **attack** is any *action* that violates security.
+
+Lecture 12 names the thing in between: those flaws are **vulnerabilities**. See [[Vulnerability Analysis]].
 
 Attacks divide into **passive** and **active**. A passive attack observes without altering; an active attack modifies, injects, or destroys. The distinction is practical rather than academic: passive attacks are far harder to detect, because by construction they leave the system's behavior unchanged. Prevention is the only real defense against a purely passive attacker.
 
@@ -81,6 +83,16 @@ The lecture closes the section with a list and a warning:
 
 **All attacks can be related and are dangerous.** The families are analytical categories, not independent risks — a fabrication attack enables interception, which enables a more targeted interruption.
 
+## Worked Instances
+
+Lecture 12 supplies protocol-level examples for most of the table above:
+
+| Family | Worked in the KB |
+|---|---|
+| Interruption | [[SYN Flooding]], [[TCP Reset Attack]], [[Smurf Attack]] |
+| Fabrication | [[IP Spoofing]], [[ARP Poisoning]], [[ICMP Redirect Attack]], [[TCP Session Hijacking]] |
+| Man-in-the-middle position | [[ARP Poisoning]], [[ICMP Redirect Attack]] |
+
 ## See Also
 
 - [[CIA Triad]]
@@ -90,4 +102,8 @@ The lecture closes the section with a list and a warning:
 - [[Prompt Injection]]
 - [[AI Agent Security]]
 - [[ARP]]
+- [[Vulnerability Analysis]]
+- [[IP Spoofing]]
+- [[ARP Poisoning]]
+- [[SYN Flooding]]
 - [[CSCE 465]]

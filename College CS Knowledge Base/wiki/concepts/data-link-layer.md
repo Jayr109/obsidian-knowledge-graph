@@ -73,8 +73,8 @@ At the receiver, each layer strips its own header and passes the inner payload u
 ## See Also
 
 - [[ARP]]
+- [[ARP Poisoning]]
 - [[Computer Networking]]
 - [[CSCE 313 Lecture 22 — Network Security: The Data Link Layer]]
-- [[Computer Networking]]
 - [[Internet Protocol]]
 - [[TCP]]

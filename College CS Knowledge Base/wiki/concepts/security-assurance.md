@@ -74,4 +74,5 @@ Threats motivate the policy; the policy drives the specification; specification,
 - [[Security Design Principles]]
 - [[Computer Security]]
 - [[Security Services]]
+- [[Vulnerability Analysis]]
 - [[CSCE 465]]

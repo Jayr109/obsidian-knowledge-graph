@@ -114,6 +114,8 @@ A 16-bit port number identifies a specific process/service on a host. Combined w
 
 Well-known ports: 23 (Telnet), 25 (SMTP), 80 (HTTP), 443 (HTTPS).
 
+[[CSCE 465]] comes at ports from the other side: which ones answer is what an attacker maps first ([[Port Scanning]]), and which ones are reachable is what a [[Firewalls|firewall]] decides.
+
 ## Client-Server Model
 
 Most network applications use the client-server model:
@@ -158,3 +160,7 @@ while (nleft > 0) {
 - [[ICMP]]
 - [[HTTP]]
 - [[SMTP]]
+- [[FTP]]
+- [[Port Scanning]]
+- [[Firewalls]]
+- [[Network Address Translation]]

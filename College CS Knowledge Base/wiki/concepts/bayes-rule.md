@@ -47,6 +47,8 @@ Concretely: test 10,000 people and you get about **100 false positives and one t
 
 > Exercise from the slides: how accurate must the test be for $P(D|T) > 0.95$?
 
+The same calculation appears in [[CSCE 465]] with an intrusion in place of the disease and an alarm in place of the positive test; see [[Base-Rate Fallacy]].
+
 ## Why Bayes' Rule Is Worth the Trouble
 
 - $P(T|D)$ is **easy to obtain** — run the test on a small pool of known patients.
@@ -87,4 +89,5 @@ If $a/b > 1$ a hexagon most likely generated the image; if $< 1$, a cube.
 - [[Conditional Independence]]
 - [[Bayesian Networks]]
 - [[Uncertainty]]
+- [[Base-Rate Fallacy]]
 - [[CSCE 420]]

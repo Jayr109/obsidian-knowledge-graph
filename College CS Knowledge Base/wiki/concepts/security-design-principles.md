@@ -2,9 +2,9 @@
 title: "Security Design Principles"
 type: concept
 tags: [csce465, security, design-principles, saltzer-schroeder]
-sources: [csce465-lecture-02-security-overview, csce465-hw1-build-and-threat-model-an-ai-agent, csce465-lecture-03-introduction-to-cryptography, csce465-lecture-03a-secret-key-cryptography-i, csce465-lecture-03b-secret-key-cryptography-ii-modes-of-operation, csce465-lecture-07-operating-system-security]
+sources: [csce465-lecture-02-security-overview, csce465-hw1-build-and-threat-model-an-ai-agent, csce465-lecture-03-introduction-to-cryptography, csce465-lecture-03a-secret-key-cryptography-i, csce465-lecture-03b-secret-key-cryptography-ii-modes-of-operation, csce465-lecture-07-operating-system-security, csce465-lecture-13-firewall, csce465-lecture-14-intrusion-detection-system]
 course: CSCE 465
-updated: 2026-10-08
+updated: 2026-11-16
 ---
 
 Ten principles for designing systems that resist attack, presented in [[CSCE 465]] as the closing third of the security overview. They are the Saltzer & Schroeder principles (from the 1975 paper *The Protection of Information in Computer Systems*), and they are the most durable content in the course: unlike a specific protocol or vulnerability class, these have not changed in fifty years. Each one is a design-time constraint, not a mechanism — they tell you how to arrange mechanisms, not which to use.
@@ -91,6 +91,14 @@ Two of the ten (work factor, compromise recording) are explicitly economic. That
 
 Lecture 7 instantiates four of the ten at once. The **closed policy** ("default secure") *is* [[Access Control Models|fail-safe defaults]], and the open policy fails for the firewall reason above. **[[Unix File Permissions|setuid]]** is least privilege deliberately suspended — every setuid-root binary is an escalation path — while `sudo` is least privilege restored. A **[[Operating System Security|Trusted Compute Base]]** must be small for exactly the economy-of-mechanism reason: it is the part nothing else can check. And OS **event logging** is compromise recording, carrying this lecture's own caveat that the audit trail must be protected from alteration.
 
+## Applied: Firewalls and Intrusion Detection
+
+Lectures 13 and 14 put two of the ten into hardware.
+
+**Fail-safe defaults.** The firewall example under principle 2 describes two real firewall types. A [[Packet Filtering|packet filter]]'s typical configuration is *ports > 1024 left open*, because a filter with no memory cannot tell a reply from a probe; a [[Session Filtering|session filter]]'s is *all denied unless specifically allowed*. Lecture 14 states the same choice as a failure mode: a firewall is **fail-close**, a network IDS is **fail-open** ([[Network Intrusion Detection]]).
+
+**Compromise recording.** Lecture 14's opening figure — *prevent, detect, react/survive*, captioned *security principles: layered mechanisms* — concedes that the first wall has holes, and an [[Intrusion Detection Systems|intrusion detection system]] is the recording device. The [[Base-Rate Fallacy]] puts a number on what recording costs: with perfect detection and a false alarm rate of 10⁻⁵, one alarm in three is still false.
+
 ## Applied: the AI Agent Case
 
 The first homework is a working demonstration that these principles are what actually fix modern systems. [[OpenClaw]]'s default `coding` profile runs tool calls with `ask=off` — no approval step — which is **fail-safe defaults inverted**. Its attack surface shows *per-layer trust checks with no unified policy*, so cross-layer attacks survive local fixes — a **complete mediation** failure at the level of composition rather than of any one check. And the durable fix for [[CVE-2024-5565]] is not to sanitize model output but to have the model emit a constrained spec a trusted renderer interprets: **economy of mechanism** and **least privilege** applied at the model boundary, so a permitted call cannot be repurposed.
@@ -120,3 +128,9 @@ The surface is new. The discipline is fifty years old.
 - [[Buffer Overflow]]
 - [[Buffer Overflow Defenses]]
 - [[Unsafe C Functions]]
+- [[Firewalls]]
+- [[Packet Filtering]]
+- [[Session Filtering]]
+- [[Intrusion Detection Systems]]
+- [[Network Intrusion Detection]]
+- [[Base-Rate Fallacy]]

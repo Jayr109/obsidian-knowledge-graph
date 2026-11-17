@@ -97,4 +97,5 @@ This is [[Security Design Principles|compromise recording]] at the OS level, and
 - [[File Systems]]
 - [[Side-Channel Attacks]]
 - [[Security Design Principles]]
+- [[Host-Based Intrusion Detection]]
 - [[CSCE 465]]

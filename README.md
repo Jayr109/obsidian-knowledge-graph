@@ -4,7 +4,7 @@ An automated, LLM-maintained knowledge base. Course material and reference docum
 a cross-linked Obsidian wiki comes out — with every page carrying structured frontmatter,
 citations back to its sources, and `[[wiki-links]]` that render as a navigable graph.
 
-Maintained with Claude Code against a per-vault contract. Six independent vaults, 628
+Maintained with Claude Code against a per-vault contract. Six independent vaults, 654
 markdown pages.
 
 ## The idea
@@ -67,15 +67,15 @@ Because `sources:` is required, every claim traces back to the document it came 
 
 | Vault | Pages | Subject |
 |---|---|---|
-| College CS | 467 | Algorithms, systems, AI, ML, security (CSCE 313 / 411 / 420 / 421 / 465), plus corporate finance and valuation |
+| College CS | 493 | Algorithms, systems, AI, ML, security (CSCE 313 / 411 / 420 / 421 / 465), plus corporate finance and valuation |
 | College GEOL101 | 75 | Geology |
 | College STAT212 | 47 | Statistics: regression, ANOVA, categorical data, nonparametric methods |
 | College MGMT309 | 25 | Survey of management |
 | First Trading | 9 | Market structure and strategy notes |
 | General | 5 | Everything else |
 
-Counts are pages under each vault's `wiki/` as of 2026-11-13. The CS vault breaks down as
-219 concepts, 65 algorithms, 1 data structure, 6 courses, 6 people, 169 sources and an
+Counts are pages under each vault's `wiki/` as of 2026-11-16. The CS vault breaks down as
+242 concepts, 65 algorithms, 1 data structure, 6 courses, 6 people, 172 sources and an
 overview.
 
 The directory names under `wiki/` vary by subject. The statistics vault adds `theorems/`,

@@ -80,8 +80,13 @@ Library functions (e.g., `printf`, `fopen`) run in user space and may internally
 
 Each syscall incurs a mode switch (user → kernel → user), which costs on the order of hundreds of nanoseconds. Minimizing unnecessary syscalls (e.g., via buffering in stdio) is important for performance.
 
+## The Security View
+
+[[CSCE 465]] uses the system-call interface as a place to watch a program from. Because every effect a process has outside its own memory goes through a syscall, the sequence of calls it makes is a record of its behaviour, and a program that has been taken over makes them in an order it normally never does. See [[Host-Based Intrusion Detection]].
+
 ## See Also
 
+- [[Host-Based Intrusion Detection]]
 - [[Operating Systems]]
 - [[Interrupts and Exceptions]]
 - [[Processes]]
